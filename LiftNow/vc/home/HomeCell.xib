@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HomeCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" rowHeight="414" id="aDn-ur-Gqk" customClass="HomeCell" customModule="LiftNow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="562" height="414"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aDn-ur-Gqk" id="aBh-jK-TLg">
+                <rect key="frame" x="0.0" y="0.0" width="562" height="414"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kc-b0-lpG" userLabel="innerView">
+                        <rect key="frame" x="20" y="20" width="522" height="394"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ocean_name" translatesAutoresizingMaskIntoConstraints="NO" id="7tl-YS-Ews">
+                                <rect key="frame" x="156" y="90.5" width="210" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ksk-IG-7TU"/>
+                                    <constraint firstAttribute="width" constant="210" id="awm-n3-TqH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A very calm sea under the gentle rays of the sun, relaxing sound of the waves lapping on the shore." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xej-jW-wKq">
+                                <rect key="frame" x="52" y="155.5" width="418.5" height="103.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOm-mH-kwy">
+                                <rect key="frame" x="161" y="299" width="200" height="55"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="DK5-m9-Ph3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="dkA-1c-hDS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="playIcon" imagePlacement="leading" title="Play" imagePadding="10">
+                                    <backgroundConfiguration key="background"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xej-jW-wKq" secondAttribute="trailing" constant="30" id="Aq7-Cv-p3P"/>
+                            <constraint firstAttribute="bottom" secondItem="NOm-mH-kwy" secondAttribute="bottom" constant="40" id="ByA-ta-cIW"/>
+                            <constraint firstItem="7tl-YS-Ews" firstAttribute="centerX" secondItem="7Kc-b0-lpG" secondAttribute="centerX" id="CMr-9O-JWk"/>
+                            <constraint firstItem="NOm-mH-kwy" firstAttribute="top" secondItem="Xej-jW-wKq" secondAttribute="bottom" constant="40" id="EMy-iR-Klp"/>
+                            <constraint firstItem="Xej-jW-wKq" firstAttribute="centerX" secondItem="7Kc-b0-lpG" secondAttribute="centerX" id="IwI-lS-thh"/>
+                            <constraint firstItem="7tl-YS-Ews" firstAttribute="top" secondItem="7Kc-b0-lpG" secondAttribute="top" constant="90.5" id="XNO-H0-Jdf"/>
+                            <constraint firstItem="Xej-jW-wKq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Kc-b0-lpG" secondAttribute="leading" constant="30" id="lCl-NE-ehA"/>
+                            <constraint firstItem="Xej-jW-wKq" firstAttribute="top" secondItem="7tl-YS-Ews" secondAttribute="bottom" constant="20" id="qaz-l3-cxt"/>
+                            <constraint firstItem="NOm-mH-kwy" firstAttribute="centerX" secondItem="7Kc-b0-lpG" secondAttribute="centerX" id="yRu-NC-jwc"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="18"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7Kc-b0-lpG" firstAttribute="top" secondItem="aBh-jK-TLg" secondAttribute="top" constant="20" id="AFm-G5-2x1"/>
+                    <constraint firstAttribute="bottom" secondItem="7Kc-b0-lpG" secondAttribute="bottom" id="Qh0-TM-wmZ"/>
+                    <constraint firstAttribute="trailing" secondItem="7Kc-b0-lpG" secondAttribute="trailing" constant="20" id="dbd-GJ-PRp"/>
+                    <constraint firstItem="7Kc-b0-lpG" firstAttribute="leading" secondItem="aBh-jK-TLg" secondAttribute="leading" constant="20" id="xAN-UF-g1H"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                        <real key="value" value="0.0"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.62352941179999999" green="0.76078431369999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="btn" destination="NOm-mH-kwy" id="G4c-mS-pOX"/>
+                <outlet property="img" destination="7tl-YS-Ews" id="K2H-jw-rTg"/>
+                <outlet property="innerView" destination="7Kc-b0-lpG" id="Ui9-pK-InN"/>
+                <outlet property="title" destination="Xej-jW-wKq" id="yCS-CW-0NQ"/>
+            </connections>
+            <point key="canvasLocation" x="-91.304347826086968" y="-508.25892857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ocean_name" width="210" height="45"/>
+        <image name="playIcon" width="20" height="21"/>
+    </resources>
+</document>
