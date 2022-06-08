@@ -68,7 +68,6 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewWillAppear(animated)
         // Hide the navigation bar on the this view controller
         self.navigationController?.isNavigationBarHidden = true
-        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,8 +111,13 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let fileURL = URL.init(fileURLWithPath: filepath!)
         let item = AVPlayerItem(url: fileURL)
         
+        
+        //    item.seek(to: CMTime.zero)
         let player = AVPlayer(playerItem: item)
-      //  let player = AVPlayer(url: fileURL)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+        
+        //  let player = AVPlayer(url: fileURL)
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = view.bounds
         playerLayer.contentsGravity = .resizeAspect
@@ -122,13 +126,15 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         videoView.layer.insertSublayer(playerLayer, at: 0)
         //  videoView.backgroundColor = UIColor.black
         player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
-//        NotificationCenter.default.addObserver(self,selector:Selector(("playerItemDidReachEnd")), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
         player.play()
     }
     
-    func playerItemDidReachEnd(playerItem: AVPlayerItem) {
-    // Your code here
-        print("playerItemDidReachEnd")
+    @objc func itemDidFinishPlaying(sender: Notification) {
+        let obj = sender.object as? AVPlayerItem
+        obj?.seek(to: CMTime.zero)
+        //        obj?.seek(to: CMTime.zero, completionHandler: { Bool in
+        //            print("completionHandler")
+        //        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -143,11 +143,12 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     func playBackBG() {
         let filepath: String? = Bundle.main.path(forResource:homeModel?.videoName, ofType: "mp4")
         let fileURL = URL.init(fileURLWithPath: filepath!)
-        
         let item = AVPlayerItem(url: fileURL)
-//        NotificationCenter.default.addObserver(self,selector:Selector(("itemDidFinishPlaying")), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: item)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: item)
+        
         player = AVPlayer(playerItem: item)
-     //   let player = AVPlayer(url: fileURL)
+        //   let player = AVPlayer(url: fileURL)
         player?.isMuted = true
         player?.volume = 0.0
         let playerLayer = AVPlayerLayer(player: player)
@@ -156,12 +157,12 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         //  playerLayer.videoGravity = .resizeAspect
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         videoView.layer.insertSublayer(playerLayer, at: 0)
-        videoView.backgroundColor = UIColor.black
+        //      videoView.backgroundColor = UIColor.black
         player?.seek(to: CMTime.zero)
         player?.play()
     }
     
-    func itemDidFinishPlaying() {
+    @objc func itemDidFinishPlaying(sender: Notification) {
         player?.seek(to: CMTime.zero)
         player?.play()
     }
