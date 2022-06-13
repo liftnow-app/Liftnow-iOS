@@ -74,7 +74,6 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         self.answerBtn.isHidden = true;
         self.skipBtn.isHidden = true;
         self.videoView.isHidden = false;
-        playBackBG()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // 2second
             self.setPageQuestions(count: self.completedCount)
         }
