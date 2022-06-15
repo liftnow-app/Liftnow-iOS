@@ -49,7 +49,15 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         
         playBackBG()
         completedCount = 0;
-        setPageQuestions(count: 0)
+        qaView.isHidden = true
+        answerBtn.isHidden = true
+        skipBtn.isHidden = true
+        ansLbl.text = "";
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { // 5second
+            self.qaView.isHidden = false
+            self.setPageQuestions(count: 0)
+        }
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -122,7 +130,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         
         let isIndexValid = qaDescArray.indices.contains(count)
         if (isIndexValid) {
-            qaDesc.animateLabel(newText:  qaDescArray[count], characterDelay: 0.1) { Bool in
+            qaDesc.animateLabel(newText:  qaDescArray[count], characterDelay: 0.2) { Bool in
                 self.showAnsNowBtn()
             }
         }

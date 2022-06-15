@@ -22,14 +22,14 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        array = CoreDataManager.shared.fetchRecord()
-        
-        tableView.register(UINib.init(nibName: "LogCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
-        
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 300
-        tableView.delegate = self
-        tableView.dataSource = self
+//        array = CoreDataManager.shared.fetchRecord()
+//        
+//        tableView.register(UINib.init(nibName: "LogCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+//        
+//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 300
+//        tableView.delegate = self
+//        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
