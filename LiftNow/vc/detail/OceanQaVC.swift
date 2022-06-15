@@ -35,6 +35,8 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     //    var qaTitleArray = [String]()
     //   var qaDescArray = [String]()
     
+    var qaList = [QansModel]()
+    
     var qaDescArray: [String] = ["How are you feeling today?", "Is Something making you scared?", "What do you like to do after coming from school? ", "What is your weakness?", "What is your favorite food?"];
     
     var completedCount: Int = 0;
@@ -58,7 +60,6 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         super.viewDidDisappear(animated)
     }
     
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         ansLbl.text = "\(textField.text ?? "")\(string)"
         return true
@@ -66,14 +67,17 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        completedCount = completedCount+1;
+        
         let str = textField.text;
         textField.text = ""
         ansLbl.text = str;
-        self.bgView.isHidden = true;
-        self.answerBtn.isHidden = true;
-        self.skipBtn.isHidden = true;
-        self.videoView.isHidden = false;
+        
+        let qa = QansModel()
+        qa.question = qaDescArray[completedCount];
+        qa.answer = str ?? "";
+        qaList.append(qa)
+        
+        answerCompletion()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // 2second
             self.setPageQuestions(count: self.completedCount)
         }
@@ -87,7 +91,12 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     @IBAction func skipAction(_ sender: Any) {
         if (completedCount < 4) {
             completedCount = completedCount+1;
+            answerCompletion()
             self.setPageQuestions(count: self.completedCount)
+        } else {
+            completedCount = completedCount+1;
+            answerCompletion()
+            showSuccess()
         }
     }
     
@@ -98,6 +107,13 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         self.skipBtn.isHidden = true;
     }
     
+    func answerCompletion() {
+        self.bgView.isHidden = true;
+        self.answerBtn.isHidden = true;
+        self.skipBtn.isHidden = true;
+        self.videoView.isHidden = false;
+    }
+    
     func setPageQuestions(count: Int) {
         completedCount = count;
         answerBtn.isHidden = true;
@@ -105,16 +121,20 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         self.ansLbl.text = ""
         
         let isIndexValid = qaDescArray.indices.contains(count)
-        
         if (isIndexValid) {
-            //    qaDesc.text = qaDescArray[count]
-            //   qaDesc.animate(newText: qaDescArray[count], characterDelay: 0.2)
-            qaDesc.animateLabel(newText:  qaDescArray[count], characterDelay: 0.2) { Bool in
+            qaDesc.animateLabel(newText:  qaDescArray[count], characterDelay: 0.1) { Bool in
                 self.showAnsNowBtn()
             }
         }
+        showSuccess()
+    }
+    
+    func showSuccess() {
         if (self.completedCount == qaDescArray.count) {
             qaView.isHidden = true
+            if (qaList.count > 0) {
+                CoreDataManager.shared.createRecord(qaList: qaList)
+            }
             showSuccessScreen()
         }
     }
