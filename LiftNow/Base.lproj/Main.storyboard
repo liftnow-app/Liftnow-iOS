@@ -480,8 +480,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpY-ra-3a3" userLabel="Header">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reflection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laM-rU-IdG">
+                                        <rect key="frame" x="142.5" y="23.5" width="129.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                        <color key="textColor" red="0.0" green="0.14117647059999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="laM-rU-IdG" firstAttribute="centerX" secondItem="HpY-ra-3a3" secondAttribute="centerX" id="hEW-nK-tJG"/>
+                                    <constraint firstItem="laM-rU-IdG" firstAttribute="centerY" secondItem="HpY-ra-3a3" secondAttribute="centerY" id="ttV-fh-2yl"/>
+                                    <constraint firstAttribute="height" constant="80" id="v0u-t7-mwl"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="279" estimatedRowHeight="279" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vf7-q1-KOj">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="689"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="808-nX-fcI" id="TKe-bI-5Rw"/>
@@ -492,10 +509,13 @@
                         <viewLayoutGuide key="safeArea" id="FWc-jf-jcZ"/>
                         <color key="backgroundColor" red="0.78823529411764703" green="0.85098039215686272" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Vf7-q1-KOj" firstAttribute="top" secondItem="HpY-ra-3a3" secondAttribute="bottom" id="0ac-IO-9t2"/>
                             <constraint firstItem="FWc-jf-jcZ" firstAttribute="trailing" secondItem="Vf7-q1-KOj" secondAttribute="trailing" id="Bwq-HH-g0z"/>
+                            <constraint firstAttribute="trailing" secondItem="HpY-ra-3a3" secondAttribute="trailing" id="S9R-ak-Org"/>
                             <constraint firstItem="Vf7-q1-KOj" firstAttribute="leading" secondItem="FWc-jf-jcZ" secondAttribute="leading" id="TTv-64-0MD"/>
+                            <constraint firstItem="HpY-ra-3a3" firstAttribute="top" secondItem="FWc-jf-jcZ" secondAttribute="top" id="akP-ka-CMe"/>
                             <constraint firstItem="FWc-jf-jcZ" firstAttribute="bottom" secondItem="Vf7-q1-KOj" secondAttribute="bottom" id="eQO-Fc-29b"/>
-                            <constraint firstItem="Vf7-q1-KOj" firstAttribute="top" secondItem="FWc-jf-jcZ" secondAttribute="top" id="kXW-Xs-rIU"/>
+                            <constraint firstItem="HpY-ra-3a3" firstAttribute="leading" secondItem="FWc-jf-jcZ" secondAttribute="leading" id="gts-pc-WzO"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Log" image="logIcon" id="d38-KP-QRc"/>
@@ -505,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHl-BH-q1s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4216" y="1520"/>
+            <point key="canvasLocation" x="4215.9420289855079" y="1519.4196428571429"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="D6A-Ad-u5l">

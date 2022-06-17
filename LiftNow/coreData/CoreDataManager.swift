@@ -32,15 +32,14 @@ public class CoreDataManager {
                 fatalError("❌ Loading of store failed:\(err)")
             }
         }
-        
         return container
     }()
     
-    public func createRecord(qaList: [QansModel]) {
+    func createRecord(qaList: [QansModel], homeModel: HomeModel) {
         let context = persistentContainer.viewContext
         let contact = NSEntityDescription.insertNewObject(forEntityName: "QusAns", into: context) as! QusAns
         contact.date = Date.now
-        
+        contact.viewType = Int16(homeModel.enumType?.rawValue ?? 0)
         let mRanges = Ranges(ranges: qaList)
         contact.setValue(mRanges, forKeyPath: "range")
         

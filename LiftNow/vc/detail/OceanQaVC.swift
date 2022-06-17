@@ -57,7 +57,8 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
             self.qaView.isHidden = false
             self.setPageQuestions(count: 0)
         }
-       
+        let type = homeModel?.enumType?.rawValue
+        print(type ?? 0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,7 +85,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         qa.question = qaDescArray[completedCount];
         qa.answer = str ?? "";
         qaList.append(qa)
-        
+        completedCount = completedCount+1;
         answerCompletion()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // 2second
             self.setPageQuestions(count: self.completedCount)
@@ -141,7 +142,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         if (self.completedCount == qaDescArray.count) {
             qaView.isHidden = true
             if (qaList.count > 0) {
-                CoreDataManager.shared.createRecord(qaList: qaList)
+                CoreDataManager.shared.createRecord(qaList: qaList, homeModel: homeModel!)
             }
             showSuccessScreen()
         }

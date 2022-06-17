@@ -15,6 +15,12 @@ class HomeModel {
     var title: String? = ""
     var image: String? = ""
     var videoName: String? = ""
+    var enumType: TypeEnum? = TypeEnum.ocean
+}
+
+enum TypeEnum: NSInteger, Codable {
+    case ocean = 1
+    case rain = 2
 }
 
 class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -40,11 +46,13 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let h1 = HomeModel()
         h1.title = "A very calm sea under the gentle rays of the sun, relaxing sound of the waves lapping on the shore";
         h1.image = "ocean_name";
+        h1.enumType =  TypeEnum.ocean
         h1.videoName = "ocean_waves";
         
         let h2 = HomeModel()
         h2.title = "The rain brings a richness to each hue, the browns deepen in a way that soothes my heart";
         h2.image = "rain_name";
+        h2.enumType =  TypeEnum.rain
         h2.videoName = "rain_waves";
         
         array.append(h1)

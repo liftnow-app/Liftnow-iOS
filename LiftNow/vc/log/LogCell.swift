@@ -8,6 +8,10 @@
 import UIKit
 class LogCell: UITableViewCell {
     
+    @IBOutlet var innerView: UIView!
+    @IBOutlet var circleView: UIView!
+    @IBOutlet var lineViewTopConst: NSLayoutConstraint!
+    @IBOutlet var lineView: UIView!
     @IBOutlet var stackView: UIStackView!
     @IBOutlet var dateLbl: UILabel!
     @IBOutlet var btn: UIButton!

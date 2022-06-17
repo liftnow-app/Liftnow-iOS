@@ -4,8 +4,9 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isExpand" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="range" optional="YES" attributeType="Transformable" customClassName="Ranges"/>
+        <attribute name="viewType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="QusAns" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="QusAns" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

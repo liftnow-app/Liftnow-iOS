@@ -22,26 +22,21 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        array = CoreDataManager.shared.fetchRecord()
-//        
-//        tableView.register(UINib.init(nibName: "LogCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
-//        
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = 300
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.register(UINib.init(nibName: "LogCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 300
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Hide the navigation bar on the this view controller
-        self.navigationController?.isNavigationBarHidden = true
+        array = CoreDataManager.shared.fetchRecord()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // Show the navigation bar on other view controllers
-        //     self.navigationController?.isNavigationBarHidden = false
     }
     
     private func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -54,10 +49,26 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell :LogCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! LogCell
         
-        cell.dateLbl.text = self.array[indexPath.row].date?.description
+        if (indexPath.row == 0) {
+            cell.lineViewTopConst.constant = 52
+            cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
+        }
+        
+        if ((indexPath.row / 2) != 0) {
+            cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
+            cell.innerView.backgroundColor = #colorLiteral(red: 0.6901960784, green: 0.7803921569, blue: 0.7529411765, alpha: 1)
+        } else {
+            cell.circleView.backgroundColor = #colorLiteral(red: 0.431372549, green: 0.7450980392, blue: 0.7764705882, alpha: 1)
+            cell.innerView.backgroundColor = #colorLiteral(red: 0.6901960784, green: 0.8274509804, blue: 0.8470588235, alpha: 1)
+        }
+        if (indexPath.row == 0) {
+            cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
+        }
+        let dateStr = self.array[indexPath.row].date?.description ?? ""
+        let dateTime = formattedDateFromString(dateString: dateStr, withFormat: "dd MMM yy h:mm a")
+        cell.dateLbl.text = dateTime
         let qaList = self.array[indexPath.row].range?.ranges ?? []
         let isExpand = self.array[indexPath.row].isExpand
         cell.stackView.arrangedSubviews.forEach { cell.stackView.removeArrangedSubview($0);$0.removeFromSuperview() }
@@ -66,27 +77,57 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 setDynamicLabel(cell: cell, ques: n.question, ans: n.answer)
             }
             cell.btn.setImage(UIImage(named: "logUP"), for: .normal)
-     //       cell.btn.setTitle("Hide answers", for: .normal)
+            //       cell.btn.setTitle("Hide answers", for: .normal)
             cell.viewMoreLbl.text = "Hide answers"
         } else {
             setDynamicLabel(cell: cell, ques: qaList.first?.question ?? "", ans: qaList.first?.answer ?? "")
             cell.btn.setImage(UIImage(named: "logDown"), for: .normal)
-         //   cell.btn.setTitle( "View more answers", for: .normal)
+            
             cell.viewMoreLbl.text = "View more answers"
         }
+        let viewType =  self.array[indexPath.row].viewType
+        switch (viewType) {
+        case 1:
+            cell.logo.image = #imageLiteral(resourceName: "logOcean")
+            break
+        case 2:
+            cell.logo.image = #imageLiteral(resourceName: "logRain")
+            break
+        default:
+            cell.logo.image = #imageLiteral(resourceName: "logOcean")
+        }
+        
         cell.btn.tag = indexPath.row
         cell.viewMoreLbl.tag = indexPath.row
         cell.btn.addTarget(self, action: #selector(playAction(sender:)), for: .touchUpInside)
         let tap = UITapGestureRecognizer(target: self, action: #selector(playAction))
+        tap.view?.tag = indexPath.row;
         cell.viewMoreLbl.isUserInteractionEnabled = true
         cell.viewMoreLbl.addGestureRecognizer(tap)
-            
+        
         return cell
     }
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+    }
+    
+    func formattedDateFromString(dateString: String, withFormat format: String) -> String? {
+
+        let inputFormatter = DateFormatter()
+        //2022-06-17 08:00:40 +0000
+        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
+
+        if let date = inputFormatter.date(from: dateString) {
+
+            let outputFormatter = DateFormatter()
+          outputFormatter.dateFormat = format
+
+            return outputFormatter.string(from: date)
+        }
+
+        return nil
     }
     
     func setDynamicLabel(cell: LogCell, ques: String, ans: String) {
@@ -98,11 +139,13 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         alabel.numberOfLines = 2
         qlabel.text = ques
         alabel.text = ans
+        qlabel.textColor = #colorLiteral(red: 0, green: 0.1411764706, blue: 0.3333333333, alpha: 0.6759463028)
+        alabel.textColor = #colorLiteral(red: 0, green: 0.1411764706, blue: 0.3333333333, alpha: 1)
         
         cell.stackView.addArrangedSubview(qlabel)
         cell.stackView.addArrangedSubview(alabel)
         let emptyView = UIView()
-       // emptyView.heightAnchor.constraint(equalToConstant: 5).isActive = true
+        // emptyView.heightAnchor.constraint(equalToConstant: 5).isActive = true
         cell.stackView.addArrangedSubview(emptyView)
     }
     
