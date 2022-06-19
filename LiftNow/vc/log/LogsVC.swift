@@ -51,10 +51,8 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell :LogCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! LogCell
         
-        if (indexPath.row == 0) {
-            cell.lineViewTopConst.constant = 52
-            cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
-        }
+        let lHeight = indexPath.row == 0 ? 50 : 0
+        cell.lineViewTopConst.constant = CGFloat(lHeight)
         
         if ((indexPath.row / 2) != 0) {
             cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
@@ -65,6 +63,7 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         if (indexPath.row == 0) {
             cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
+            cell.innerView.backgroundColor = #colorLiteral(red: 0.6901960784, green: 0.7803921569, blue: 0.7529411765, alpha: 1)
         }
         let dateStr = self.array[indexPath.row].date?.description ?? ""
         let dateTime = formattedDateFromString(dateString: dateStr, withFormat: "dd MMM yy h:mm a")
