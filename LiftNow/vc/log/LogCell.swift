@@ -15,6 +15,7 @@ class LogCell: UITableViewCell {
     @IBOutlet var stackView: UIStackView!
     @IBOutlet var dateLbl: UILabel!
     @IBOutlet var btn: UIButton!
+    @IBOutlet var viewMoreBtn: UIButton!
     @IBOutlet var logo: UIImageView!
     @IBOutlet var viewMoreLbl: UILabel!
     

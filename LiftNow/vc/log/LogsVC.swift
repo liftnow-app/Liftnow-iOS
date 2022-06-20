@@ -76,12 +76,10 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 setDynamicLabel(cell: cell, ques: n.question, ans: n.answer)
             }
             cell.btn.setImage(UIImage(named: "logUP"), for: .normal)
-            //       cell.btn.setTitle("Hide answers", for: .normal)
             cell.viewMoreLbl.text = "Hide answers"
         } else {
             setDynamicLabel(cell: cell, ques: qaList.first?.question ?? "", ans: qaList.first?.answer ?? "")
             cell.btn.setImage(UIImage(named: "logDown"), for: .normal)
-            
             cell.viewMoreLbl.text = "View more answers"
         }
         let viewType =  self.array[indexPath.row].viewType
@@ -96,14 +94,15 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.logo.image = #imageLiteral(resourceName: "logOcean")
         }
         
+        cell.viewMoreBtn.tag = indexPath.row
         cell.btn.tag = indexPath.row
-        cell.viewMoreLbl.tag = indexPath.row
+        cell.viewMoreBtn.addTarget(self, action: #selector(playAction(sender:)), for: .touchUpInside)
         cell.btn.addTarget(self, action: #selector(playAction(sender:)), for: .touchUpInside)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(playAction))
-        tap.view?.tag = indexPath.row;
-        cell.viewMoreLbl.isUserInteractionEnabled = true
-        cell.viewMoreLbl.addGestureRecognizer(tap)
-        
+        //      cell.viewMoreLbl.tag = indexPath.row
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(playAction))
+//        tap.view?.tag = indexPath.row;
+//        cell.viewMoreLbl.isUserInteractionEnabled = true
+//        cell.viewMoreLbl.addGestureRecognizer(tap)
         return cell
     }
     

@@ -60,6 +60,13 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.register(UINib.init(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         
+        let screenSize: CGRect = UIScreen.main.bounds
+        let height = screenSize.height
+        print(height)
+        //800 - 5.9 inch & above
+        let rowHeight = height > 800 ? 310 : 350
+        tableView.rowHeight = CGFloat(rowHeight)
+        tableView.estimatedRowHeight = CGFloat(rowHeight)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -93,11 +100,11 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell :HomeCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! HomeCell
-        
+        cell.btn.isHidden = true
         cell.title.text = self.array[indexPath.row].title
         cell.img.image = UIImage(named:self.array[indexPath.row].image ?? "")
-        cell.btn.tag = indexPath.row
-        cell.btn.addTarget(self, action: #selector(playAction(sender:)), for: .touchUpInside)
+        cell.cellBtn.tag = indexPath.row
+        cell.cellBtn.addTarget(self, action: #selector(playAction(sender:)), for: .touchUpInside)
         self.playBackBG(videoView: cell.innerView, videoName: self.array[indexPath.row].videoName ?? "")
         return cell
     }
