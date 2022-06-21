@@ -11,7 +11,7 @@ class HomeCell: UITableViewCell {
     @IBOutlet var innerView: UIView!
     @IBOutlet var title: UILabel!
     @IBOutlet var btn: UIButton!
-    @IBOutlet var img: UIImageView!
+    @IBOutlet var imgLbl: UILabel!
     @IBOutlet var cellBtn: UIButton!
     
     override func awakeFromNib() {

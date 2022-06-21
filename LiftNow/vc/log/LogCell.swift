@@ -8,7 +8,8 @@
 import UIKit
 class LogCell: UITableViewCell {
     
-    @IBOutlet var innerView: UIView!
+    @IBOutlet var innerView: CardView!
+    //  @IBOutlet var innerView: UIView!
     @IBOutlet var circleView: UIView!
     @IBOutlet var lineViewTopConst: NSLayoutConstraint!
     @IBOutlet var lineView: UIView!
@@ -16,11 +17,18 @@ class LogCell: UITableViewCell {
     @IBOutlet var dateLbl: UILabel!
     @IBOutlet var btn: UIButton!
     @IBOutlet var viewMoreBtn: UIButton!
-    @IBOutlet var logo: UIImageView!
+    @IBOutlet var imgLbl: UILabel!
     @IBOutlet var viewMoreLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+     //   innerView.cardView()
+        
+//        innerView.layer.cornerRadius = 20.0
+//        innerView.layer.shadowColor = UIColor.gray.cgColor
+//        innerView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+//        innerView.layer.shadowRadius = 12.0
+//        innerView.layer.shadowOpacity = 0.7
     }
 //    let titleLabel = UILabel()
 //        let stackView = UIStackView()

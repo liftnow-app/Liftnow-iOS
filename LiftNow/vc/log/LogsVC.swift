@@ -33,6 +33,7 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         array = CoreDataManager.shared.fetchRecord()
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,22 +52,22 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell :LogCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! LogCell
         
-        let lHeight = indexPath.row == 0 ? 50 : 0
+        let lHeight = indexPath.row == 0 ? 55 : 0
         cell.lineViewTopConst.constant = CGFloat(lHeight)
         
-        if ((indexPath.row / 2) != 0) {
-            cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
-            cell.innerView.backgroundColor = #colorLiteral(red: 0.6901960784, green: 0.7803921569, blue: 0.7529411765, alpha: 1)
-        } else {
-            cell.circleView.backgroundColor = #colorLiteral(red: 0.431372549, green: 0.7450980392, blue: 0.7764705882, alpha: 1)
-            cell.innerView.backgroundColor = #colorLiteral(red: 0.6901960784, green: 0.8274509804, blue: 0.8470588235, alpha: 1)
-        }
-        if (indexPath.row == 0) {
-            cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
-            cell.innerView.backgroundColor = #colorLiteral(red: 0.6901960784, green: 0.7803921569, blue: 0.7529411765, alpha: 1)
-        }
+//        if ((indexPath.row / 2) != 0) {
+//            cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
+//            cell.innerView.backgroundColor = #colorLiteral(red: 0.6901960784, green: 0.7803921569, blue: 0.7529411765, alpha: 1)
+//        } else {
+//            cell.circleView.backgroundColor = #colorLiteral(red: 0.431372549, green: 0.7450980392, blue: 0.7764705882, alpha: 1)
+//            cell.innerView.backgroundColor = #colorLiteral(red: 0.6901960784, green: 0.8274509804, blue: 0.8470588235, alpha: 1)
+//        }
+//        if (indexPath.row == 0) {
+//            cell.circleView.backgroundColor = #colorLiteral(red: 0.5098039216, green: 0.6509803922, blue: 0.5411764706, alpha: 1)
+//            cell.innerView.backgroundColor = #colorLiteral(red: 0.6901960784, green: 0.7803921569, blue: 0.7529411765, alpha: 1)
+//        }
         let dateStr = self.array[indexPath.row].date?.description ?? ""
-        let dateTime = formattedDateFromString(dateString: dateStr, withFormat: "dd MMM yy h:mm a")
+        let dateTime = formattedDateFromString(dateString: dateStr, withFormat: "dd MMM yyyy h:mm a")
         cell.dateLbl.text = dateTime
         let qaList = self.array[indexPath.row].range?.ranges ?? []
         let isExpand = self.array[indexPath.row].isExpand
@@ -85,13 +86,13 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let viewType =  self.array[indexPath.row].viewType
         switch (viewType) {
         case 1:
-            cell.logo.image = #imageLiteral(resourceName: "logOcean")
+            cell.imgLbl.text = "Ocean"
             break
         case 2:
-            cell.logo.image = #imageLiteral(resourceName: "logRain")
+            cell.imgLbl.text = "Rain"
             break
         default:
-            cell.logo.image = #imageLiteral(resourceName: "logOcean")
+            cell.imgLbl.text = "Ocean"
         }
         
         cell.viewMoreBtn.tag = indexPath.row
@@ -112,19 +113,14 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func formattedDateFromString(dateString: String, withFormat format: String) -> String? {
-
         let inputFormatter = DateFormatter()
         //2022-06-17 08:00:40 +0000
         inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
-
         if let date = inputFormatter.date(from: dateString) {
-
             let outputFormatter = DateFormatter()
           outputFormatter.dateFormat = format
-
             return outputFormatter.string(from: date)
         }
-
         return nil
     }
     
@@ -139,6 +135,8 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         alabel.text = ans
         qlabel.textColor = #colorLiteral(red: 0, green: 0.1411764706, blue: 0.3333333333, alpha: 0.6759463028)
         alabel.textColor = #colorLiteral(red: 0, green: 0.1411764706, blue: 0.3333333333, alpha: 1)
+        qlabel.font = UIFont(name:"NotoSans-Regular", size:14)
+        alabel.font = UIFont(name:"NotoSans-Regular", size:16)
         
         cell.stackView.addArrangedSubview(qlabel)
         cell.stackView.addArrangedSubview(alabel)

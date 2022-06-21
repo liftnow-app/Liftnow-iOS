@@ -1,5 +1,41 @@
 import UIKit
 
+@IBDesignable
+class CardView: UIView {
+    
+    //    @IBInspectable var cornerRadius: CGFloat {
+    //        get {
+    //            return layer.cornerRadius
+    //        }
+    //        set {
+    //            layer.cornerRadius = newValue
+    //            layer.shadowRadius = newValue
+    //            layer.masksToBounds = false
+    //        }
+    //    }
+    
+    @IBInspectable var shadowOpacity: Float {
+        get {
+            return layer.shadowOpacity
+        }
+        set {
+            layer.shadowOpacity = newValue
+            layer.shadowColor = UIColor.darkGray.cgColor
+        }
+    }
+    
+    @IBInspectable var shadowOffset: CGSize {
+        get {
+            return layer.shadowOffset
+        }
+        set {
+            layer.shadowOffset = newValue
+            layer.shadowColor = UIColor.black.cgColor
+            layer.masksToBounds = false
+        }
+    }
+}
+
 extension UIApplication {
     var statusBarUIView: UIView? {
         if #available(iOS 13.0, *) {
@@ -19,6 +55,16 @@ extension UIApplication {
             }
         }
         return nil
+    }
+}
+
+extension UIView {
+    func cardView() -> Void {
+        self.layer.cornerRadius = 10
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        self.layer.shadowRadius = 4.0
+        self.layer.shadowOpacity = 0.5
     }
 }
 

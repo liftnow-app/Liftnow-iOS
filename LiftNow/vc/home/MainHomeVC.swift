@@ -44,16 +44,16 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         let h1 = HomeModel()
-        h1.title = "A very calm sea under the gentle rays of the sun, relaxing sound of the waves lapping on the shore";
-        h1.image = "ocean_name";
+        h1.title = "A very calm sea under the gentle rays of the sun."
+        h1.image = "Ocean"
         h1.enumType =  TypeEnum.ocean
-        h1.videoName = "ocean_waves";
+        h1.videoName = "ocean_waves"
         
         let h2 = HomeModel()
-        h2.title = "The rain brings a richness to each hue, the browns deepen in a way that soothes my heart";
-        h2.image = "rain_name";
+        h2.title = "The rain brings a richness to each hue and the browns"
+        h2.image = "Rain"
         h2.enumType =  TypeEnum.rain
-        h2.videoName = "rain_waves";
+        h2.videoName = "rain_waves"
         
         array.append(h1)
         array.append(h2)
@@ -102,7 +102,8 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell :HomeCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! HomeCell
         cell.btn.isHidden = true
         cell.title.text = self.array[indexPath.row].title
-        cell.img.image = UIImage(named:self.array[indexPath.row].image ?? "")
+        cell.imgLbl.text = self.array[indexPath.row].image
+      //  cell.img.image = UIImage(named:self.array[indexPath.row].image ?? "")
         cell.cellBtn.tag = indexPath.row
         cell.cellBtn.addTarget(self, action: #selector(playAction(sender:)), for: .touchUpInside)
         self.playBackBG(videoView: cell.innerView, videoName: self.array[indexPath.row].videoName ?? "")

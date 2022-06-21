@@ -11,6 +11,31 @@
 		C138A0262858CFD400A4B01F /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C138A0242858CFD400A4B01F /* CoreDataModel.xcdatamodeld */; };
 		C138A0292858D04D00A4B01F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C138A0282858D04D00A4B01F /* CoreDataManager.swift */; };
 		C138A02B2858D68E00A4B01F /* Ranges.swift in Sources */ = {isa = PBXBuildFile; fileRef = C138A02A2858D68E00A4B01F /* Ranges.swift */; };
+		C161303F2862056500F8BD1C /* DESYREL_.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161303B2862056500F8BD1C /* DESYREL_.ttf */; };
+		C16130402862056500F8BD1C /* BillionDreams_PERSONAL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161303C2862056500F8BD1C /* BillionDreams_PERSONAL.ttf */; };
+		C161305428620C9B00F8BD1C /* NotoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304228620C8100F8BD1C /* NotoSans-Black.ttf */; };
+		C161305528620C9B00F8BD1C /* NotoSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304728620C8100F8BD1C /* NotoSans-BlackItalic.ttf */; };
+		C161305628620C9B00F8BD1C /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304328620C8100F8BD1C /* NotoSans-Bold.ttf */; };
+		C161305728620C9B00F8BD1C /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304A28620C8100F8BD1C /* NotoSans-BoldItalic.ttf */; };
+		C161305828620C9B00F8BD1C /* NotoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304628620C8100F8BD1C /* NotoSans-ExtraBold.ttf */; };
+		C161305928620C9B00F8BD1C /* NotoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304F28620C8100F8BD1C /* NotoSans-ExtraBoldItalic.ttf */; };
+		C161305A28620C9B00F8BD1C /* NotoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161305028620C8100F8BD1C /* NotoSans-ExtraLight.ttf */; };
+		C161305B28620C9B00F8BD1C /* NotoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304528620C8100F8BD1C /* NotoSans-ExtraLightItalic.ttf */; };
+		C161305C28620C9B00F8BD1C /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161305228620C8100F8BD1C /* NotoSans-Italic.ttf */; };
+		C161305D28620C9B00F8BD1C /* NotoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304928620C8100F8BD1C /* NotoSans-Light.ttf */; };
+		C161305E28620C9B00F8BD1C /* NotoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161305128620C8100F8BD1C /* NotoSans-LightItalic.ttf */; };
+		C161305F28620C9B00F8BD1C /* NotoSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304428620C8100F8BD1C /* NotoSans-Medium.ttf */; };
+		C161306028620C9B00F8BD1C /* NotoSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161305328620C8100F8BD1C /* NotoSans-MediumItalic.ttf */; };
+		C161306128620C9B00F8BD1C /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304E28620C8100F8BD1C /* NotoSans-Regular.ttf */; };
+		C161306228620C9B00F8BD1C /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304B28620C8100F8BD1C /* NotoSans-SemiBold.ttf */; };
+		C161306328620C9B00F8BD1C /* NotoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304828620C8100F8BD1C /* NotoSans-SemiBoldItalic.ttf */; };
+		C161306428620C9B00F8BD1C /* NotoSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304C28620C8100F8BD1C /* NotoSans-Thin.ttf */; };
+		C161306528620C9B00F8BD1C /* NotoSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161304D28620C8100F8BD1C /* NotoSans-ThinItalic.ttf */; };
+		C161306B28620CE200F8BD1C /* Calibri Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161306628620CC900F8BD1C /* Calibri Bold Italic.ttf */; };
+		C161306C28620CE200F8BD1C /* Calibri Bold.TTF in Resources */ = {isa = PBXBuildFile; fileRef = C161306A28620CC900F8BD1C /* Calibri Bold.TTF */; };
+		C161306D28620CE200F8BD1C /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161306928620CC900F8BD1C /* Calibri Italic.ttf */; };
+		C161306E28620CE200F8BD1C /* Calibri Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161306728620CC900F8BD1C /* Calibri Light Italic.ttf */; };
+		C161306F28620CE200F8BD1C /* Calibri Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C161306828620CC900F8BD1C /* Calibri Regular.ttf */; };
 		C1786195284E4BC700F0517F /* MainHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1786194284E4BC700F0517F /* MainHomeVC.swift */; };
 		C1786199284E4CC100F0517F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1786198284E4CC100F0517F /* HomeCell.swift */; };
 		C178619B284E4D9D00F0517F /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C178619A284E4D9D00F0517F /* HomeCell.xib */; };
@@ -61,6 +86,31 @@
 		C138A0252858CFD400A4B01F /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		C138A0282858D04D00A4B01F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C138A02A2858D68E00A4B01F /* Ranges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranges.swift; sourceTree = "<group>"; };
+		C161303B2862056500F8BD1C /* DESYREL_.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DESYREL_.ttf; sourceTree = "<group>"; };
+		C161303C2862056500F8BD1C /* BillionDreams_PERSONAL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BillionDreams_PERSONAL.ttf; sourceTree = "<group>"; };
+		C161304228620C8100F8BD1C /* NotoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Black.ttf"; sourceTree = "<group>"; };
+		C161304328620C8100F8BD1C /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		C161304428620C8100F8BD1C /* NotoSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Medium.ttf"; sourceTree = "<group>"; };
+		C161304528620C8100F8BD1C /* NotoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		C161304628620C8100F8BD1C /* NotoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C161304728620C8100F8BD1C /* NotoSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BlackItalic.ttf"; sourceTree = "<group>"; };
+		C161304828620C8100F8BD1C /* NotoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		C161304928620C8100F8BD1C /* NotoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Light.ttf"; sourceTree = "<group>"; };
+		C161304A28620C8100F8BD1C /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C161304B28620C8100F8BD1C /* NotoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		C161304C28620C8100F8BD1C /* NotoSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Thin.ttf"; sourceTree = "<group>"; };
+		C161304D28620C8100F8BD1C /* NotoSans-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-ThinItalic.ttf"; sourceTree = "<group>"; };
+		C161304E28620C8100F8BD1C /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		C161304F28620C8100F8BD1C /* NotoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		C161305028620C8100F8BD1C /* NotoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		C161305128620C8100F8BD1C /* NotoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		C161305228620C8100F8BD1C /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		C161305328620C8100F8BD1C /* NotoSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		C161306628620CC900F8BD1C /* Calibri Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold Italic.ttf"; sourceTree = "<group>"; };
+		C161306728620CC900F8BD1C /* Calibri Light Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Light Italic.ttf"; sourceTree = "<group>"; };
+		C161306828620CC900F8BD1C /* Calibri Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Regular.ttf"; sourceTree = "<group>"; };
+		C161306928620CC900F8BD1C /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
+		C161306A28620CC900F8BD1C /* Calibri Bold.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold.TTF"; sourceTree = "<group>"; };
 		C1786194284E4BC700F0517F /* MainHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeVC.swift; sourceTree = "<group>"; };
 		C1786198284E4CC100F0517F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		C178619A284E4D9D00F0517F /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
@@ -127,6 +177,38 @@
 			path = coreData;
 			sourceTree = "<group>";
 		};
+		C16130382861E5CD00F8BD1C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C161304228620C8100F8BD1C /* NotoSans-Black.ttf */,
+				C161304728620C8100F8BD1C /* NotoSans-BlackItalic.ttf */,
+				C161304328620C8100F8BD1C /* NotoSans-Bold.ttf */,
+				C161304A28620C8100F8BD1C /* NotoSans-BoldItalic.ttf */,
+				C161304628620C8100F8BD1C /* NotoSans-ExtraBold.ttf */,
+				C161304F28620C8100F8BD1C /* NotoSans-ExtraBoldItalic.ttf */,
+				C161305028620C8100F8BD1C /* NotoSans-ExtraLight.ttf */,
+				C161304528620C8100F8BD1C /* NotoSans-ExtraLightItalic.ttf */,
+				C161305228620C8100F8BD1C /* NotoSans-Italic.ttf */,
+				C161304928620C8100F8BD1C /* NotoSans-Light.ttf */,
+				C161305128620C8100F8BD1C /* NotoSans-LightItalic.ttf */,
+				C161304428620C8100F8BD1C /* NotoSans-Medium.ttf */,
+				C161305328620C8100F8BD1C /* NotoSans-MediumItalic.ttf */,
+				C161304E28620C8100F8BD1C /* NotoSans-Regular.ttf */,
+				C161304B28620C8100F8BD1C /* NotoSans-SemiBold.ttf */,
+				C161304828620C8100F8BD1C /* NotoSans-SemiBoldItalic.ttf */,
+				C161304C28620C8100F8BD1C /* NotoSans-Thin.ttf */,
+				C161304D28620C8100F8BD1C /* NotoSans-ThinItalic.ttf */,
+				C161303C2862056500F8BD1C /* BillionDreams_PERSONAL.ttf */,
+				C161306628620CC900F8BD1C /* Calibri Bold Italic.ttf */,
+				C161306A28620CC900F8BD1C /* Calibri Bold.TTF */,
+				C161306928620CC900F8BD1C /* Calibri Italic.ttf */,
+				C161306728620CC900F8BD1C /* Calibri Light Italic.ttf */,
+				C161306828620CC900F8BD1C /* Calibri Regular.ttf */,
+				C161303B2862056500F8BD1C /* DESYREL_.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		C1786196284E4C8100F0517F /* vc */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +270,7 @@
 		C1B328842842348100950321 /* LiftNow */ = {
 			isa = PBXGroup;
 			children = (
+				C16130382861E5CD00F8BD1C /* fonts */,
 				C138A0272858D04000A4B01F /* coreData */,
 				C1D5D1CA2850B3E100D9318F /* ocean_waves.mp4 */,
 				C1D5D1C92850B3E100D9318F /* rain_waves.mp4 */,
@@ -366,12 +449,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C161306B28620CE200F8BD1C /* Calibri Bold Italic.ttf in Resources */,
+				C161306C28620CE200F8BD1C /* Calibri Bold.TTF in Resources */,
+				C161306D28620CE200F8BD1C /* Calibri Italic.ttf in Resources */,
+				C161306E28620CE200F8BD1C /* Calibri Light Italic.ttf in Resources */,
+				C161306F28620CE200F8BD1C /* Calibri Regular.ttf in Resources */,
+				C161305428620C9B00F8BD1C /* NotoSans-Black.ttf in Resources */,
+				C161305528620C9B00F8BD1C /* NotoSans-BlackItalic.ttf in Resources */,
+				C161305628620C9B00F8BD1C /* NotoSans-Bold.ttf in Resources */,
+				C161305728620C9B00F8BD1C /* NotoSans-BoldItalic.ttf in Resources */,
+				C161305828620C9B00F8BD1C /* NotoSans-ExtraBold.ttf in Resources */,
+				C161305928620C9B00F8BD1C /* NotoSans-ExtraBoldItalic.ttf in Resources */,
+				C161305A28620C9B00F8BD1C /* NotoSans-ExtraLight.ttf in Resources */,
+				C161305B28620C9B00F8BD1C /* NotoSans-ExtraLightItalic.ttf in Resources */,
+				C161305C28620C9B00F8BD1C /* NotoSans-Italic.ttf in Resources */,
+				C161305D28620C9B00F8BD1C /* NotoSans-Light.ttf in Resources */,
+				C161305E28620C9B00F8BD1C /* NotoSans-LightItalic.ttf in Resources */,
+				C161305F28620C9B00F8BD1C /* NotoSans-Medium.ttf in Resources */,
+				C161306028620C9B00F8BD1C /* NotoSans-MediumItalic.ttf in Resources */,
+				C161306128620C9B00F8BD1C /* NotoSans-Regular.ttf in Resources */,
+				C161306228620C9B00F8BD1C /* NotoSans-SemiBold.ttf in Resources */,
+				C161306328620C9B00F8BD1C /* NotoSans-SemiBoldItalic.ttf in Resources */,
+				C161306428620C9B00F8BD1C /* NotoSans-Thin.ttf in Resources */,
+				C161306528620C9B00F8BD1C /* NotoSans-ThinItalic.ttf in Resources */,
 				C1D5D1CB2850B3F200D9318F /* ocean_waves.mp4 in Resources */,
 				C1D5D1CC2850B3F200D9318F /* rain_waves.mp4 in Resources */,
+				C16130402862056500F8BD1C /* BillionDreams_PERSONAL.ttf in Resources */,
 				C1B328922842348300950321 /* LaunchScreen.storyboard in Resources */,
 				C1B3288F2842348300950321 /* Assets.xcassets in Resources */,
 				C1B3288D2842348100950321 /* Main.storyboard in Resources */,
 				C178619B284E4D9D00F0517F /* HomeCell.xib in Resources */,
+				C161303F2862056500F8BD1C /* DESYREL_.ttf in Resources */,
 				C1B741E228596FD800F19537 /* LogCell.xib in Resources */,
 				C1B328C9284273AC00950321 /* NavigationBar.xib in Resources */,
 			);
