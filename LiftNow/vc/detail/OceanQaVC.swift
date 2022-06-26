@@ -29,6 +29,8 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     @IBOutlet var textField: UITextField!
     @IBOutlet var ansLbl: UILabel!
     @IBOutlet var qaDesc: UILabel!
+    @IBOutlet var mainAllView: UIView!
+    @IBOutlet var scrollView: UIScrollView!
     
     let customAlertVC = CustomAlertVC.instantiate()
     
@@ -42,8 +44,22 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     var completedCount: Int = 0;
     var nextQuesDelay: Int = 60 // 1minute delay
     
+    //Scrollview top spacing fix in iphone10 above
+    private var scrollViewSafeAreaObserver: NSKeyValueObservation!
+    @available(iOS 11.0, *)
+    func scrollViewSafeAreaInsetsDidChange() {
+        self.scrollView.contentInset.top = -self.scrollView.safeAreaInsets.top
+    }
+    
+    deinit {
+        self.scrollViewSafeAreaObserver?.invalidate()
+        self.scrollViewSafeAreaObserver = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setScrollView()
+        
         textField.delegate = self
         bgView.isHidden = true;
         bgView.backgroundColor = UIColor(patternImage: UIImage(named: "ansBG.png")!)
@@ -93,6 +109,9 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true);
+        appDelegate.deviceOrientation = .portrait
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
     }
     
     @IBAction func skipAction(_ sender: Any) {
@@ -194,6 +213,16 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     @objc func itemDidFinishPlaying(sender: Notification) {
         player?.seek(to: CMTime.zero)
         player?.play()
+    }
+    
+    func setScrollView() {
+        if #available(iOS 11.0, *) {
+            self.scrollViewSafeAreaObserver = self.scrollView.observe(\.safeAreaInsets) { [weak self] (_, _) in
+                self?.scrollViewSafeAreaInsetsDidChange()
+            }
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
     }
 }
 

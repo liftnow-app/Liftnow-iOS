@@ -103,7 +103,7 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.btn.isHidden = true
         cell.title.text = self.array[indexPath.row].title
         cell.imgLbl.text = self.array[indexPath.row].image
-      //  cell.img.image = UIImage(named:self.array[indexPath.row].image ?? "")
+        //  cell.img.image = UIImage(named:self.array[indexPath.row].image ?? "")
         cell.cellBtn.tag = indexPath.row
         cell.cellBtn.addTarget(self, action: #selector(playAction(sender:)), for: .touchUpInside)
         self.playBackBG(videoView: cell.innerView, videoName: self.array[indexPath.row].videoName ?? "")
@@ -120,6 +120,9 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let index = sender.tag
         selectedHome = array[index]
         performSegue(withIdentifier: "OceanQaVC", sender: self)
+        appDelegate.deviceOrientation = .landscapeLeft
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
     }
     
     func playBackBG(videoView: UIView, videoName: String) {
@@ -156,6 +159,7 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is OceanQaVC {
             let vc = segue.destination as? OceanQaVC
+            //    vc?.modalPresentationStyle = .fullScreen
             vc?.homeModel = self.selectedHome
         }
     }
