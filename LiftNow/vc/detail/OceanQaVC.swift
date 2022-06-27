@@ -42,7 +42,9 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     var qaDescArray: [String] = ["How are you feeling today?", "Is Something making you scared?", "What do you like to do after coming from school? ", "What is your weakness?", "What is your favorite food?"];
     
     var completedCount: Int = 0;
-    var nextQuesDelay: Int = 60 // 1minute delay
+    var nextQuesDelay: Int = 60 // 1 minute delay
+    var characterDelayQues: Float = 0.2 // 0.2 second
+    var qaAnsLabelDelay: Float = 0.6 // 0.6 second
     
     //Scrollview top spacing fix in iphone10 above
     private var scrollViewSafeAreaObserver: NSKeyValueObservation!
@@ -147,14 +149,21 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
             self.answerBtn.isHidden = true
             self.skipBtn.isHidden = true
             self.qaView.isHidden = false
-            self.ansLbl.text = ""
-            let isIndexValid = self.qaDescArray.indices.contains(count)
-            if (isIndexValid) {
-                self.qaDesc.animateLabel(newText:  self.qaDescArray[count], characterDelay: 0.2) { Bool in
-                    self.showAnsNowBtn()
-                }
+            
+            DispatchQueue.main.async {
+                UIView.transition(with: self.ansLbl, duration: TimeInterval(self.qaAnsLabelDelay),
+                                  options: .transitionCrossDissolve,
+                                  animations: {
+                    self.ansLbl.text = ""
+                    let isIndexValid = self.qaDescArray.indices.contains(count)
+                    if (isIndexValid) {
+                        self.qaDesc.animateLabel(newText:  self.qaDescArray[count], characterDelay: TimeInterval(self.characterDelayQues)) { Bool in
+                            self.showAnsNowBtn()
+                        }
+                    }
+                    self.showSuccess()
+                })
             }
-            self.showSuccess()
         }
     }
     
