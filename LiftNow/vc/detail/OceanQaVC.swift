@@ -11,7 +11,8 @@ import AVFoundation
 
 class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDelegate, OkayActionDelegate {
     func okayAction() {
-        self.navigationController?.popViewController(animated: true);
+        self.navigationController?.popViewController(animated: true)
+        orientationChange()
     }
     
     func popupViewControllerDidDismissByTapGesture(_ sender: PopupViewController) {
@@ -110,10 +111,8 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     }
     
     @IBAction func backAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true);
-        appDelegate.deviceOrientation = .portrait
-        let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
+        self.navigationController?.popViewController(animated: true)
+        orientationChange()
     }
     
     @IBAction func skipAction(_ sender: Any) {
@@ -222,6 +221,12 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     @objc func itemDidFinishPlaying(sender: Notification) {
         player?.seek(to: CMTime.zero)
         player?.play()
+    }
+    
+    func orientationChange() {
+        appDelegate.deviceOrientation = .portrait
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
     }
     
     func setScrollView() {
