@@ -120,6 +120,10 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let index = sender.tag
         selectedHome = array[index]
         performSegue(withIdentifier: "OceanQaVC", sender: self)
+ //       orientationChange()
+    }
+    
+    func orientationChange() {
         appDelegate.deviceOrientation = .landscapeLeft
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")

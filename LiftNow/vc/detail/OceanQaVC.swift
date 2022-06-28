@@ -12,7 +12,7 @@ import AVFoundation
 class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDelegate, OkayActionDelegate {
     func okayAction() {
         self.navigationController?.popViewController(animated: true)
-        orientationChange()
+    //    orientationChange()
     }
     
     func popupViewControllerDidDismissByTapGesture(_ sender: PopupViewController) {
@@ -112,7 +112,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-        orientationChange()
+ //       orientationChange()
     }
     
     @IBAction func skipAction(_ sender: Any) {

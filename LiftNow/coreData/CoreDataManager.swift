@@ -38,7 +38,8 @@ public class CoreDataManager {
     func createRecord(qaList: [QansModel], homeModel: HomeModel) {
         let context = persistentContainer.viewContext
         let contact = NSEntityDescription.insertNewObject(forEntityName: "QusAns", into: context) as! QusAns
-        contact.date = Date.now
+        let date = Date()
+        contact.date = date
         contact.viewType = Int16(homeModel.enumType?.rawValue ?? 0)
         let mRanges = Ranges(ranges: qaList)
         contact.setValue(mRanges, forKeyPath: "range")
