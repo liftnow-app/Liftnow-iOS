@@ -12,7 +12,7 @@ import AVFoundation
 class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDelegate, OkayActionDelegate {
     func okayAction() {
         self.navigationController?.popViewController(animated: true)
-    //    orientationChange()
+        //    orientationChange()
     }
     
     func popupViewControllerDidDismissByTapGesture(_ sender: PopupViewController) {
@@ -64,14 +64,16 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         setScrollView()
         
         textField.delegate = self
-        bgView.isHidden = true;
+        self.setViewAni(view: self.bgView, hidden: true)
         bgView.backgroundColor = UIColor(patternImage: UIImage(named: "ansBG.png")!)
         
         playBackBG()
         completedCount = 0;
-        qaView.isHidden = true
-        answerBtn.isHidden = true
-        skipBtn.isHidden = true
+        
+        self.setViewAni(view: self.qaView, hidden: true)
+        self.setViewAni(view: self.answerBtn, hidden: true)
+        self.setViewAni(view: self.skipBtn, hidden: true)
+        
         ansLbl.text = ""
         self.setPageQuestions(count: 0, delay: nextQuesDelay)
         let type = homeModel?.enumType?.rawValue
@@ -94,7 +96,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
-        let str = textField.text;
+        let str = textField.text
         textField.text = ""
         ansLbl.text = str
         
@@ -102,17 +104,22 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         qa.question = qaDescArray[completedCount]
         qa.answer = str ?? ""
         qaList.append(qa)
-        completedCount = completedCount+1;
-        answerCompletion()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // 1second
-            self.setPageQuestions(count: self.completedCount, delay: 0)
-        }
+        completedCount = completedCount+1
+        UIView.transition(with: self.ansLbl, duration: TimeInterval(5),
+                          options: .transitionCrossDissolve,
+                          animations: {
+            self.ansLbl.text = ""
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) { // 4second delay to show the video
+                self.answerCompletion()
+                self.setPageQuestions(count: self.completedCount, delay: 0)
+            }
+        })
         return true
     }
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
- //       orientationChange()
+        //       orientationChange()
     }
     
     @IBAction func skipAction(_ sender: Any) {
@@ -129,46 +136,43 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     @IBAction func answerNwAction(_ sender: Any) {
         self.textField.becomeFirstResponder()
-        self.bgView.isHidden = false;
-        self.answerBtn.isHidden = true;
-        self.skipBtn.isHidden = true;
+        self.setViewAni(view: bgView, hidden: false)
+        self.setViewAni(view: answerBtn, hidden: true)
+        self.setViewAni(view: skipBtn, hidden: true)
     }
     
     func answerCompletion() {
-        self.bgView.isHidden = true
-        self.answerBtn.isHidden = true
-        self.skipBtn.isHidden = true
-        self.qaView.isHidden = true
-        self.videoView.isHidden = false
+        self.setViewAni(view: bgView, hidden: true)
+        self.setViewAni(view: answerBtn, hidden: true)
+        self.setViewAni(view: skipBtn, hidden: true)
+        self.setViewAni(view: qaView, hidden: true)
+        self.setViewAni(view: videoView, hidden: false)
+        videoView.fadeIn()
     }
     
     func setPageQuestions(count: Int, delay: Int) {
         DispatchQueue.main.asyncAfter(deadline: .now() + Double(delay)) { // 2second
-            self.completedCount = count;
-            self.answerBtn.isHidden = true
-            self.skipBtn.isHidden = true
-            self.qaView.isHidden = false
+            self.completedCount = count
+            self.setViewAni(view: self.answerBtn, hidden: true)
+            self.setViewAni(view: self.skipBtn, hidden: true)
+            self.setViewAni(view: self.qaView, hidden: false)
             
             DispatchQueue.main.async {
-                UIView.transition(with: self.ansLbl, duration: TimeInterval(self.qaAnsLabelDelay),
-                                  options: .transitionCrossDissolve,
-                                  animations: {
-                    self.ansLbl.text = ""
-                    let isIndexValid = self.qaDescArray.indices.contains(count)
-                    if (isIndexValid) {
-                        self.qaDesc.animateLabel(newText:  self.qaDescArray[count], characterDelay: TimeInterval(self.characterDelayQues)) { Bool in
-                            self.showAnsNowBtn()
-                        }
+                self.ansLbl.text = ""
+                let isIndexValid = self.qaDescArray.indices.contains(count)
+                if (isIndexValid) {
+                    self.qaDesc.animateLabel(newText:  self.qaDescArray[count], characterDelay: TimeInterval(self.characterDelayQues)) { Bool in
+                        self.showAnsNowBtn()
                     }
-                    self.showSuccess()
-                })
+                }
+                self.showSuccess()
             }
         }
     }
     
     func showSuccess() {
         if (self.completedCount == qaDescArray.count) {
-            qaView.isHidden = true
+            self.setViewAni(view: qaView, hidden: true)
             if (qaList.count > 0) {
                 CoreDataManager.shared.createRecord(qaList: qaList, homeModel: homeModel!)
             }
@@ -190,9 +194,9 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     func showAnsNowBtn() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // 1second
-            self.answerBtn.isHidden = false;
-            self.skipBtn.isHidden = false;
-            self.ansLbl.text = "";
+            self.setViewAni(view: self.answerBtn, hidden: false)
+            self.setViewAni(view: self.skipBtn, hidden: false)
+            self.ansLbl.text = ""
         }
     }
     
@@ -221,6 +225,12 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     @objc func itemDidFinishPlaying(sender: Notification) {
         player?.seek(to: CMTime.zero)
         player?.play()
+    }
+    
+    func setViewAni(view: UIView, hidden: Bool) {
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            view.isHidden = hidden
+        })
     }
     
     func orientationChange() {
