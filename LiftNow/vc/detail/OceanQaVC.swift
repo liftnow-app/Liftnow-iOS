@@ -8,6 +8,7 @@
 import UIKit
 import AVKit
 import AVFoundation
+import SDWebImageWebPCoder
 
 class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDelegate, OkayActionDelegate {
     func okayAction() {
@@ -22,6 +23,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     var homeModel: HomeModel?
     
     var player: AVPlayer?
+    @IBOutlet var ivAnimate: UIImageView!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet var bgView: UIView!
     @IBOutlet var qaView: UIView!
@@ -63,6 +65,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         super.viewDidLoad()
         setScrollView()
         
+        textField.autocapitalizationType = .sentences
         textField.delegate = self
         self.setViewAni(view: self.bgView, hidden: true)
         bgView.backgroundColor = UIColor(patternImage: UIImage(named: "ansBG.png")!)
@@ -201,25 +204,33 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     }
     
     func playBackBG() {
-        let filepath: String? = Bundle.main.path(forResource:homeModel?.videoName, ofType: "mp4")
-        let fileURL = URL.init(fileURLWithPath: filepath!)
-        let item = AVPlayerItem(url: fileURL)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: item)
-        
-        player = AVPlayer(playerItem: item)
-        //   let player = AVPlayer(url: fileURL)
-        player?.isMuted = true
-        player?.volume = 0.0
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = view.bounds
-        playerLayer.contentsGravity = .resizeAspect
-        //  playerLayer.videoGravity = .resizeAspect
-        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        videoView.layer.insertSublayer(playerLayer, at: 0)
-        //      videoView.backgroundColor = UIColor.black
-        player?.seek(to: CMTime.zero)
-        player?.play()
+//        let filepath: String? = Bundle.main.path(forResource:homeModel?.videoName, ofType: "mp4")
+//        let fileURL = URL.init(fileURLWithPath: filepath!)
+//        let item = AVPlayerItem(url: fileURL)
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: item)
+//
+//        player = AVPlayer(playerItem: item)
+//        //   let player = AVPlayer(url: fileURL)
+//        player?.isMuted = true
+//        player?.volume = 0.0
+//        let playerLayer = AVPlayerLayer(player: player)
+//        playerLayer.frame = view.bounds
+//        playerLayer.contentsGravity = .resizeAspect
+//        //  playerLayer.videoGravity = .resizeAspect
+//        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+//        videoView.layer.insertSublayer(playerLayer, at: 0)
+//        //      videoView.backgroundColor = UIColor.black
+//        player?.seek(to: CMTime.zero)
+//        player?.play()
+        let fetcher = BundleURLFetcher()
+        DispatchQueue.main.async {
+            let imageUrl = fetcher.fetchURL(for: FileFormat.apng)
+            self.ivAnimate.sd_setImage(with: imageUrl)
+            self.ivAnimate.contentMode = .scaleAspectFill
+            self.videoView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
+            self.bgView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
+        }
     }
     
     @objc func itemDidFinishPlaying(sender: Notification) {

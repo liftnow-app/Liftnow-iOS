@@ -8,6 +8,7 @@
 import UIKit
 class HomeCell: UITableViewCell {
     
+    @IBOutlet var ivAnimate: UIImageView!
     @IBOutlet var innerView: UIView!
     @IBOutlet var title: UILabel!
     @IBOutlet var btn: UIButton!

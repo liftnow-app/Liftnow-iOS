@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +27,9 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kc-b0-lpG" userLabel="innerView">
                         <rect key="frame" x="20" y="10" width="522" height="404"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZHm-22-BXW">
+                                <rect key="frame" x="0.0" y="0.0" width="522" height="404"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ocen" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9U7-qP-l51">
                                 <rect key="frame" x="220" y="87" width="82" height="60"/>
                                 <constraints>
@@ -70,16 +74,20 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="WJa-SC-zqn" secondAttribute="trailing" id="0Cd-cu-f7O"/>
+                            <constraint firstItem="ZHm-22-BXW" firstAttribute="leading" secondItem="7Kc-b0-lpG" secondAttribute="leading" id="1Bz-Vh-P6Q"/>
                             <constraint firstAttribute="bottom" secondItem="WJa-SC-zqn" secondAttribute="bottom" id="1nj-o4-a5i"/>
+                            <constraint firstAttribute="trailing" secondItem="ZHm-22-BXW" secondAttribute="trailing" id="1xc-wR-mfd"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xej-jW-wKq" secondAttribute="trailing" constant="30" id="Aq7-Cv-p3P"/>
                             <constraint firstAttribute="bottom" secondItem="NOm-mH-kwy" secondAttribute="bottom" constant="40" id="ByA-ta-cIW"/>
                             <constraint firstItem="Xej-jW-wKq" firstAttribute="centerX" secondItem="7Kc-b0-lpG" secondAttribute="centerX" id="IwI-lS-thh"/>
                             <constraint firstItem="9U7-qP-l51" firstAttribute="top" secondItem="7Kc-b0-lpG" secondAttribute="top" constant="87" id="OzJ-Lf-irY"/>
+                            <constraint firstAttribute="bottom" secondItem="ZHm-22-BXW" secondAttribute="bottom" id="bVc-Ql-upe"/>
                             <constraint firstItem="Xej-jW-wKq" firstAttribute="top" secondItem="9U7-qP-l51" secondAttribute="bottom" constant="10" id="c0X-qB-N47"/>
                             <constraint firstItem="9U7-qP-l51" firstAttribute="centerX" secondItem="7Kc-b0-lpG" secondAttribute="centerX" id="dQq-MJ-kOV"/>
                             <constraint firstItem="WJa-SC-zqn" firstAttribute="top" secondItem="7Kc-b0-lpG" secondAttribute="top" id="fHb-J4-7A9"/>
                             <constraint firstItem="Xej-jW-wKq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Kc-b0-lpG" secondAttribute="leading" constant="30" id="lCl-NE-ehA"/>
                             <constraint firstItem="WJa-SC-zqn" firstAttribute="leading" secondItem="7Kc-b0-lpG" secondAttribute="leading" id="m1g-GW-Nyk"/>
+                            <constraint firstItem="ZHm-22-BXW" firstAttribute="top" secondItem="7Kc-b0-lpG" secondAttribute="top" id="oVo-a5-P1L"/>
                             <constraint firstItem="NOm-mH-kwy" firstAttribute="centerX" secondItem="7Kc-b0-lpG" secondAttribute="centerX" id="yRu-NC-jwc"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -113,6 +121,7 @@
                 <outlet property="cellBtn" destination="WJa-SC-zqn" id="WoB-jD-F5e"/>
                 <outlet property="imgLbl" destination="9U7-qP-l51" id="jSO-j1-lpD"/>
                 <outlet property="innerView" destination="7Kc-b0-lpG" id="Ui9-pK-InN"/>
+                <outlet property="ivAnimate" destination="ZHm-22-BXW" id="20P-j3-MQD"/>
                 <outlet property="title" destination="Xej-jW-wKq" id="yCS-CW-0NQ"/>
             </connections>
             <point key="canvasLocation" x="-91.304347826086968" y="-508.25892857142856"/>

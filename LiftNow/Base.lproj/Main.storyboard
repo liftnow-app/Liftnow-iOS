@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PsU-ZT-Eie">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -135,6 +136,9 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1F9-r7-Cip">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                         <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CGj-AS-JXl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                                            </imageView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2f-c8-Ks8" userLabel="bgView">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                                 <subviews>
@@ -229,7 +233,11 @@
                                                         <constraints>
                                                             <constraint firstItem="C2f-c8-Ks8" firstAttribute="leading" secondItem="1F9-r7-Cip" secondAttribute="leading" id="3Dp-In-TTL"/>
                                                             <constraint firstItem="9rX-uA-FL8" firstAttribute="leading" secondItem="1F9-r7-Cip" secondAttribute="leading" constant="30" id="4N8-Fy-epn"/>
+                                                            <constraint firstItem="CGj-AS-JXl" firstAttribute="top" secondItem="1F9-r7-Cip" secondAttribute="top" id="5AC-iW-adg"/>
                                                             <constraint firstItem="C2f-c8-Ks8" firstAttribute="top" secondItem="1F9-r7-Cip" secondAttribute="top" id="CTr-8F-2j9"/>
+                                                            <constraint firstAttribute="bottom" secondItem="CGj-AS-JXl" secondAttribute="bottom" id="FhM-GH-yue"/>
+                                                            <constraint firstItem="CGj-AS-JXl" firstAttribute="leading" secondItem="1F9-r7-Cip" secondAttribute="leading" id="G1l-GM-jz1"/>
+                                                            <constraint firstAttribute="trailing" secondItem="CGj-AS-JXl" secondAttribute="trailing" id="GVT-jl-N1V"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cEf-wg-Lwh" secondAttribute="trailing" constant="20" symbolic="YES" id="OAn-6K-gzf"/>
                                                             <constraint firstItem="cEf-wg-Lwh" firstAttribute="leading" secondItem="m1x-bf-kJE" secondAttribute="trailing" constant="12" id="YS9-W7-TOO"/>
                                                             <constraint firstItem="9rX-uA-FL8" firstAttribute="top" secondItem="1F9-r7-Cip" secondAttribute="top" constant="160" id="bFj-Ap-aVh"/>
@@ -244,7 +252,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6M-6c-cmB">
                                                         <rect key="frame" x="128" y="400.5" width="158" height="75"/>
                                                         <fontDescription key="fontDescription" name="Desyrel" family="Desyrel" pointSize="60"/>
-                                                        <color key="textColor" red="0.57647058823529407" green="0.54117647058823526" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" red="0.76078431372549016" green="0.69803921568627447" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MzV-p6-Dtb" userLabel="backView">
@@ -307,6 +315,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="zCm-dh-jG7"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ls3-aU-L1Q" secondAttribute="bottom" id="7vJ-Q9-OTS"/>
@@ -320,6 +329,7 @@
                         <outlet property="ansLbl" destination="U6M-6c-cmB" id="1YE-KS-zxM"/>
                         <outlet property="answerBtn" destination="m1x-bf-kJE" id="20I-xA-AfA"/>
                         <outlet property="bgView" destination="C2f-c8-Ks8" id="Ksd-DC-Ybc"/>
+                        <outlet property="ivAnimate" destination="CGj-AS-JXl" id="Bc3-a9-hvJ"/>
                         <outlet property="qaDesc" destination="pMR-GA-Ivd" id="sJc-t3-kVH"/>
                         <outlet property="qaView" destination="9rX-uA-FL8" id="Qmj-nH-rjD"/>
                         <outlet property="scrollView" destination="97e-Di-AM6" id="2QK-MS-rpW"/>
