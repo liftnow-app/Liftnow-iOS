@@ -186,7 +186,7 @@
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1x-bf-kJE">
                                                                 <rect key="frame" x="30" y="260.5" width="134" height="46"/>
-                                                                <color key="backgroundColor" red="0.96078431372549022" green="0.51764705882352935" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.36078431372549019" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="46" id="47C-ZD-ByY"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="134" id="wcH-07-RE3"/>
@@ -208,7 +208,7 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-wg-Lwh">
                                                                 <rect key="frame" x="176" y="260.5" width="134" height="46"/>
-                                                                <color key="backgroundColor" red="0.070588235294117646" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="134" id="VvZ-Nj-rPM"/>
                                                                     <constraint firstAttribute="height" constant="46" id="oTi-gG-XXj"/>
@@ -217,7 +217,7 @@
                                                                 <buttonConfiguration key="configuration" style="plain" title="Skip">
                                                                     <backgroundConfiguration key="background"/>
                                                                     <fontDescription key="titleFontDescription" name="NotoSans-Regular" family="Noto Sans" pointSize="16"/>
-                                                                    <color key="baseForegroundColor" red="0.68235294117647061" green="0.77647058823529413" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="baseForegroundColor" red="0.0" green="0.14117647058823529" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </buttonConfiguration>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

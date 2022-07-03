@@ -179,7 +179,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
             if (qaList.count > 0) {
                 CoreDataManager.shared.createRecord(qaList: qaList, homeModel: homeModel!)
             }
-            showSuccessScreen()
+       //     showSuccessScreen()
         }
     }
     
