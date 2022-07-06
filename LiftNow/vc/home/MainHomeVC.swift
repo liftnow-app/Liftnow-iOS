@@ -130,33 +130,35 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func playBackBG(cell: HomeCell, videoName: String) {
-//        let filepath: String? = Bundle.main.path(forResource: videoName, ofType: "mp4")
-//        let fileURL = URL.init(fileURLWithPath: filepath!)
-//        let item = AVPlayerItem(url: fileURL)
-//        
-//        
-//        //    item.seek(to: CMTime.zero)
-//        let player = AVPlayer(playerItem: item)
-//        
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
-//        
-//        //  let player = AVPlayer(url: fileURL)
-//        let playerLayer = AVPlayerLayer(player: player)
-//        playerLayer.frame = view.bounds
-//        playerLayer.contentsGravity = .resizeAspect
-//        //  playerLayer.videoGravity = .resizeAspect
-//        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-//        cell.innerView.layer.insertSublayer(playerLayer, at: 0)
-//        //  videoView.backgroundColor = UIColor.black
-//        player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
-//        player.play()
-        let fetcher = BundleURLFetcher()
-        DispatchQueue.main.async {
-            let imageUrl = fetcher.fetchURL(for: FileFormat.apng)
-            cell.ivAnimate.sd_setImage(with: imageUrl)
-            cell.ivAnimate.contentMode = .scaleAspectFill
-            cell.innerView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
-        }
+        cell.ivAnimate.isHidden = true
+        let filepath: String? = Bundle.main.path(forResource: videoName, ofType: "mp4")
+        let fileURL = URL.init(fileURLWithPath: filepath!)
+        let item = AVPlayerItem(url: fileURL)
+        
+        
+        //    item.seek(to: CMTime.zero)
+        let player = AVPlayer(playerItem: item)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+        
+        //  let player = AVPlayer(url: fileURL)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.contentsGravity = .resizeAspect
+        //  playerLayer.videoGravity = .resizeAspect
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        cell.innerView.layer.insertSublayer(playerLayer, at: 0)
+        //  videoView.backgroundColor = UIColor.black
+        player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
+        player.isMuted = true
+        player.play()
+//        let fetcher = BundleURLFetcher()
+//        DispatchQueue.main.async {
+//            let imageUrl = fetcher.fetchURL(for: FileFormat.apng)
+//            cell.ivAnimate.sd_setImage(with: imageUrl)
+//            cell.ivAnimate.contentMode = .scaleAspectFill
+//            cell.innerView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
+//        }
     }
     
     @objc func itemDidFinishPlaying(sender: Notification) {

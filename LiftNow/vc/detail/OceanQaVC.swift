@@ -25,6 +25,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     var player: AVPlayer?
     @IBOutlet var ivAnimate: UIImageView!
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var videoPlayerView: UIView!
     @IBOutlet var bgView: UIView!
     @IBOutlet var qaView: UIView!
     @IBOutlet var answerBtn: UIButton!
@@ -44,7 +45,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     var qaDescArray: [String] = ["How are you feeling today?", "Is Something making you scared?", "What do you like to do after coming from school? ", "What is your weakness?", "What is your favorite food?"];
     
-    var completedCount: Int = 0;
+    var completedCount: Int = 0
     var nextQuesDelay: Int = 60 // 1 minute delay
     var characterDelayQues: Float = 0.2 // 0.2 second
     var qaAnsLabelDelay: Float = 0.6 // 0.6 second
@@ -108,15 +109,19 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         qa.answer = str ?? ""
         qaList.append(qa)
         completedCount = completedCount+1
-        UIView.transition(with: self.ansLbl, duration: TimeInterval(5),
-                          options: .transitionCrossDissolve,
-                          animations: {
-            self.ansLbl.text = ""
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) { // 4second delay to show the video
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // 2second delay to show APNG video
+            self.showAPNGbgPlayer()
+            UIView.transition(with: self.ansLbl, duration: TimeInterval(2),
+                              options: .transitionCrossDissolve,
+                              animations: {
+                self.ansLbl.text = ""
+            })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 14) { // 14second delay to show the video
+                self.showVideoPlayer()
                 self.answerCompletion()
                 self.setPageQuestions(count: self.completedCount, delay: 0)
             }
-        })
+        }
         return true
     }
     
@@ -179,7 +184,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
             if (qaList.count > 0) {
                 CoreDataManager.shared.createRecord(qaList: qaList, homeModel: homeModel!)
             }
-       //     showSuccessScreen()
+            //     showSuccessScreen()
         }
     }
     
@@ -204,32 +209,45 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     }
     
     func playBackBG() {
-//        let filepath: String? = Bundle.main.path(forResource:homeModel?.videoName, ofType: "mp4")
-//        let fileURL = URL.init(fileURLWithPath: filepath!)
-//        let item = AVPlayerItem(url: fileURL)
-//
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: item)
-//
-//        player = AVPlayer(playerItem: item)
-//        //   let player = AVPlayer(url: fileURL)
-//        player?.isMuted = true
-//        player?.volume = 0.0
-//        let playerLayer = AVPlayerLayer(player: player)
-//        playerLayer.frame = view.bounds
-//        playerLayer.contentsGravity = .resizeAspect
-//        //  playerLayer.videoGravity = .resizeAspect
-//        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-//        videoView.layer.insertSublayer(playerLayer, at: 0)
-//        //      videoView.backgroundColor = UIColor.black
-//        player?.seek(to: CMTime.zero)
-//        player?.play()
-        let fetcher = BundleURLFetcher()
+        showVideoPlayer()
+        let filepath: String? = Bundle.main.path(forResource:homeModel?.videoName, ofType: "mp4")
+        let fileURL = URL.init(fileURLWithPath: filepath!)
+        let item = AVPlayerItem(url: fileURL)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: item)
+        
+        player = AVPlayer(playerItem: item)
+        //   let player = AVPlayer(url: fileURL)
+        player?.isMuted = true
+        player?.volume = 0.0
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.contentsGravity = .resizeAspect
+        //  playerLayer.videoGravity = .resizeAspect
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        videoPlayerView.layer.insertSublayer(playerLayer, at: 0)
+        //      videoView.backgroundColor = UIColor.black
+        player?.seek(to: CMTime.zero)
+        player?.play()
+    }
+    
+    func showVideoPlayer() {
+        self.videoView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
+        self.bgView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
+        self.setViewAni(view: self.videoPlayerView, hidden: false)
+        self.setViewAni(view: self.ivAnimate, hidden: true)
+    }
+    
+    func showAPNGbgPlayer() {
         DispatchQueue.main.async {
+            let fetcher = BundleURLFetcher()
             let imageUrl = fetcher.fetchURL(for: FileFormat.apng)
             self.ivAnimate.sd_setImage(with: imageUrl)
             self.ivAnimate.contentMode = .scaleAspectFill
-            self.videoView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
-            self.bgView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
+            self.setViewAni(view: self.ivAnimate, hidden: false)
+            self.setViewAni(view: self.videoView, hidden: false)
+            self.setViewAni(view: self.videoPlayerView, hidden: true)
+            self.setViewAni(view: self.bgView, hidden: true)
         }
     }
     

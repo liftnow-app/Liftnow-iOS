@@ -65,8 +65,8 @@
 		C1B741E028596D6C00F19537 /* LogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B741DF28596D6C00F19537 /* LogsVC.swift */; };
 		C1B741E228596FD800F19537 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B741E128596FD800F19537 /* LogCell.xib */; };
 		C1B741E42859700400F19537 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B741E32859700400F19537 /* LogCell.swift */; };
-		C1D5D1CB2850B3F200D9318F /* ocean_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C1D5D1CA2850B3E100D9318F /* ocean_waves.mp4 */; };
 		C1D5D1CC2850B3F200D9318F /* rain_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C1D5D1C92850B3E100D9318F /* rain_waves.mp4 */; };
+		C1DFC51C2875CE680066B7C3 /* ocean_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C1DFC51B2875CE300066B7C3 /* ocean_waves.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,7 +153,7 @@
 		C1B741E128596FD800F19537 /* LogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogCell.xib; sourceTree = "<group>"; };
 		C1B741E32859700400F19537 /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		C1D5D1C92850B3E100D9318F /* rain_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain_waves.mp4; sourceTree = "<group>"; };
-		C1D5D1CA2850B3E100D9318F /* ocean_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocean_waves.mp4; sourceTree = "<group>"; };
+		C1DFC51B2875CE300066B7C3 /* ocean_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ocean_waves.mp4; path = ../../../../../../Desktop/ocean_waves.mp4; sourceTree = "<group>"; };
 		C8A8E104DFCA72AAB3CEB67F /* Pods-LiftNow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNow.debug.xcconfig"; path = "Target Support Files/Pods-LiftNow/Pods-LiftNow.debug.xcconfig"; sourceTree = "<group>"; };
 		E082373D9B10A5EC93533574 /* Pods-LiftNowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNowTests.debug.xcconfig"; path = "Target Support Files/Pods-LiftNowTests/Pods-LiftNowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBC595A18CE1AF7CF51F3C2E /* Pods-LiftNowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNowTests.release.xcconfig"; path = "Target Support Files/Pods-LiftNowTests/Pods-LiftNowTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -276,8 +276,8 @@
 		C1808FDA286EB2C800C07AAC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C1DFC51B2875CE300066B7C3 /* ocean_waves.mp4 */,
 				C1D5D1C92850B3E100D9318F /* rain_waves.mp4 */,
-				C1D5D1CA2850B3E100D9318F /* ocean_waves.mp4 */,
 				C1808FDC286EB2E100C07AAC /* webp */,
 				C1808FDB286EB2D800C07AAC /* apng */,
 			);
@@ -526,6 +526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1DFC51C2875CE680066B7C3 /* ocean_waves.mp4 in Resources */,
 				C1808FDE286EB30800C07AAC /* water_waves.png in Resources */,
 				C161306B28620CE200F8BD1C /* Calibri Bold Italic.ttf in Resources */,
 				C161306C28620CE200F8BD1C /* Calibri Bold.TTF in Resources */,
@@ -550,7 +551,6 @@
 				C161306328620C9B00F8BD1C /* NotoSans-SemiBoldItalic.ttf in Resources */,
 				C161306428620C9B00F8BD1C /* NotoSans-Thin.ttf in Resources */,
 				C161306528620C9B00F8BD1C /* NotoSans-ThinItalic.ttf in Resources */,
-				C1D5D1CB2850B3F200D9318F /* ocean_waves.mp4 in Resources */,
 				C1D5D1CC2850B3F200D9318F /* rain_waves.mp4 in Resources */,
 				C16130402862056500F8BD1C /* BillionDreams_PERSONAL.ttf in Resources */,
 				C1B328922842348300950321 /* LaunchScreen.storyboard in Resources */,

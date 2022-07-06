@@ -27,6 +27,10 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kc-b0-lpG" userLabel="innerView">
                         <rect key="frame" x="20" y="10" width="522" height="404"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMg-8N-MDH" userLabel="shadowView">
+                                <rect key="frame" x="0.0" y="0.0" width="522" height="404"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.49515845070422537" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZHm-22-BXW">
                                 <rect key="frame" x="0.0" y="0.0" width="522" height="404"/>
                             </imageView>
@@ -80,14 +84,18 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xej-jW-wKq" secondAttribute="trailing" constant="30" id="Aq7-Cv-p3P"/>
                             <constraint firstAttribute="bottom" secondItem="NOm-mH-kwy" secondAttribute="bottom" constant="40" id="ByA-ta-cIW"/>
                             <constraint firstItem="Xej-jW-wKq" firstAttribute="centerX" secondItem="7Kc-b0-lpG" secondAttribute="centerX" id="IwI-lS-thh"/>
+                            <constraint firstAttribute="trailing" secondItem="LMg-8N-MDH" secondAttribute="trailing" id="LXO-jH-Vx6"/>
                             <constraint firstItem="9U7-qP-l51" firstAttribute="top" secondItem="7Kc-b0-lpG" secondAttribute="top" constant="87" id="OzJ-Lf-irY"/>
+                            <constraint firstAttribute="bottom" secondItem="LMg-8N-MDH" secondAttribute="bottom" id="TUo-W8-Edw"/>
                             <constraint firstAttribute="bottom" secondItem="ZHm-22-BXW" secondAttribute="bottom" id="bVc-Ql-upe"/>
                             <constraint firstItem="Xej-jW-wKq" firstAttribute="top" secondItem="9U7-qP-l51" secondAttribute="bottom" constant="10" id="c0X-qB-N47"/>
                             <constraint firstItem="9U7-qP-l51" firstAttribute="centerX" secondItem="7Kc-b0-lpG" secondAttribute="centerX" id="dQq-MJ-kOV"/>
                             <constraint firstItem="WJa-SC-zqn" firstAttribute="top" secondItem="7Kc-b0-lpG" secondAttribute="top" id="fHb-J4-7A9"/>
+                            <constraint firstItem="LMg-8N-MDH" firstAttribute="leading" secondItem="7Kc-b0-lpG" secondAttribute="leading" id="fpp-4W-Ylw"/>
                             <constraint firstItem="Xej-jW-wKq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Kc-b0-lpG" secondAttribute="leading" constant="30" id="lCl-NE-ehA"/>
                             <constraint firstItem="WJa-SC-zqn" firstAttribute="leading" secondItem="7Kc-b0-lpG" secondAttribute="leading" id="m1g-GW-Nyk"/>
                             <constraint firstItem="ZHm-22-BXW" firstAttribute="top" secondItem="7Kc-b0-lpG" secondAttribute="top" id="oVo-a5-P1L"/>
+                            <constraint firstItem="LMg-8N-MDH" firstAttribute="top" secondItem="7Kc-b0-lpG" secondAttribute="top" id="xdo-Pq-QmQ"/>
                             <constraint firstItem="NOm-mH-kwy" firstAttribute="centerX" secondItem="7Kc-b0-lpG" secondAttribute="centerX" id="yRu-NC-jwc"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
