@@ -44,6 +44,7 @@
 		C178619B284E4D9D00F0517F /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C178619A284E4D9D00F0517F /* HomeCell.xib */; };
 		C1808FDE286EB30800C07AAC /* water_waves.png in Resources */ = {isa = PBXBuildFile; fileRef = C1808FDD286EB30800C07AAC /* water_waves.png */; };
 		C1808FE1286EB5CF00C07AAC /* BundleURLFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1808FE0286EB5CF00C07AAC /* BundleURLFetcher.swift */; };
+		C1A01EBB287751940011EF9B /* ocean_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C1A01EBA287751750011EF9B /* ocean_waves.mp4 */; };
 		C1B1EC2C284F6C5700396AD6 /* OceanQaVC_oldBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC2B284F6C5700396AD6 /* OceanQaVC_oldBackup.swift */; };
 		C1B1EC2E284F897D00396AD6 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC2D284F897D00396AD6 /* UILabel+Extension.swift */; };
 		C1B1EC31284F8DA600396AD6 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC30284F8DA600396AD6 /* CustomTabBar.swift */; };
@@ -65,8 +66,7 @@
 		C1B741E028596D6C00F19537 /* LogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B741DF28596D6C00F19537 /* LogsVC.swift */; };
 		C1B741E228596FD800F19537 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B741E128596FD800F19537 /* LogCell.xib */; };
 		C1B741E42859700400F19537 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B741E32859700400F19537 /* LogCell.swift */; };
-		C1D5D1CC2850B3F200D9318F /* rain_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C1D5D1C92850B3E100D9318F /* rain_waves.mp4 */; };
-		C1DFC51C2875CE680066B7C3 /* ocean_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C1DFC51B2875CE300066B7C3 /* ocean_waves.mp4 */; };
+		C1F9AA1E287766200084EDAB /* rain_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C1F9AA1D287765FB0084EDAB /* rain_waves.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +127,7 @@
 		C1808FDD286EB30800C07AAC /* water_waves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_waves.png; sourceTree = "<group>"; };
 		C1808FDF286EB34800C07AAC /* webp_anim.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = webp_anim.webp; sourceTree = "<group>"; };
 		C1808FE0286EB5CF00C07AAC /* BundleURLFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleURLFetcher.swift; sourceTree = "<group>"; };
+		C1A01EBA287751750011EF9B /* ocean_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocean_waves.mp4; sourceTree = "<group>"; };
 		C1B1EC2B284F6C5700396AD6 /* OceanQaVC_oldBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanQaVC_oldBackup.swift; sourceTree = "<group>"; };
 		C1B1EC2D284F897D00396AD6 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		C1B1EC30284F8DA600396AD6 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -152,8 +153,7 @@
 		C1B741DF28596D6C00F19537 /* LogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsVC.swift; sourceTree = "<group>"; };
 		C1B741E128596FD800F19537 /* LogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogCell.xib; sourceTree = "<group>"; };
 		C1B741E32859700400F19537 /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
-		C1D5D1C92850B3E100D9318F /* rain_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain_waves.mp4; sourceTree = "<group>"; };
-		C1DFC51B2875CE300066B7C3 /* ocean_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ocean_waves.mp4; path = ../../../../../../Desktop/ocean_waves.mp4; sourceTree = "<group>"; };
+		C1F9AA1D287765FB0084EDAB /* rain_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain_waves.mp4; sourceTree = "<group>"; };
 		C8A8E104DFCA72AAB3CEB67F /* Pods-LiftNow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNow.debug.xcconfig"; path = "Target Support Files/Pods-LiftNow/Pods-LiftNow.debug.xcconfig"; sourceTree = "<group>"; };
 		E082373D9B10A5EC93533574 /* Pods-LiftNowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNowTests.debug.xcconfig"; path = "Target Support Files/Pods-LiftNowTests/Pods-LiftNowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBC595A18CE1AF7CF51F3C2E /* Pods-LiftNowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNowTests.release.xcconfig"; path = "Target Support Files/Pods-LiftNowTests/Pods-LiftNowTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -276,8 +276,8 @@
 		C1808FDA286EB2C800C07AAC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C1DFC51B2875CE300066B7C3 /* ocean_waves.mp4 */,
-				C1D5D1C92850B3E100D9318F /* rain_waves.mp4 */,
+				C1A01EBA287751750011EF9B /* ocean_waves.mp4 */,
+				C1F9AA1D287765FB0084EDAB /* rain_waves.mp4 */,
 				C1808FDC286EB2E100C07AAC /* webp */,
 				C1808FDB286EB2D800C07AAC /* apng */,
 			);
@@ -526,7 +526,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1DFC51C2875CE680066B7C3 /* ocean_waves.mp4 in Resources */,
+				C1F9AA1E287766200084EDAB /* rain_waves.mp4 in Resources */,
+				C1A01EBB287751940011EF9B /* ocean_waves.mp4 in Resources */,
 				C1808FDE286EB30800C07AAC /* water_waves.png in Resources */,
 				C161306B28620CE200F8BD1C /* Calibri Bold Italic.ttf in Resources */,
 				C161306C28620CE200F8BD1C /* Calibri Bold.TTF in Resources */,
@@ -551,7 +552,6 @@
 				C161306328620C9B00F8BD1C /* NotoSans-SemiBoldItalic.ttf in Resources */,
 				C161306428620C9B00F8BD1C /* NotoSans-Thin.ttf in Resources */,
 				C161306528620C9B00F8BD1C /* NotoSans-ThinItalic.ttf in Resources */,
-				C1D5D1CC2850B3F200D9318F /* rain_waves.mp4 in Resources */,
 				C16130402862056500F8BD1C /* BillionDreams_PERSONAL.ttf in Resources */,
 				C1B328922842348300950321 /* LaunchScreen.storyboard in Resources */,
 				C1B3288F2842348300950321 /* Assets.xcassets in Resources */,
@@ -882,9 +882,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FA22D78J94;
+				DEVELOPMENT_TEAM = 7KTL2H9UB8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftNow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -900,6 +901,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liftnow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = LiftNow_Distribution;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -912,9 +914,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FA22D78J94;
+				DEVELOPMENT_TEAM = 7KTL2H9UB8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftNow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -930,6 +933,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liftnow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = LiftNow_Distribution;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

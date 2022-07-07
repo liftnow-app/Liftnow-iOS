@@ -119,7 +119,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
             DispatchQueue.main.asyncAfter(deadline: .now() + 14) { // 14second delay to show the video
                 self.showVideoPlayer()
                 self.answerCompletion()
-                self.setPageQuestions(count: self.completedCount, delay: 0)
+                self.setPageQuestions(count: self.completedCount, delay: self.nextQuesDelay)
             }
         }
         return true
@@ -132,11 +132,11 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     @IBAction func skipAction(_ sender: Any) {
         if (completedCount < 4) {
-            completedCount = completedCount+1;
+            completedCount = completedCount+1
             answerCompletion()
             self.setPageQuestions(count: self.completedCount, delay: nextQuesDelay)
         } else {
-            completedCount = completedCount+1;
+            completedCount = completedCount+1
             answerCompletion()
             showSuccess()
         }
