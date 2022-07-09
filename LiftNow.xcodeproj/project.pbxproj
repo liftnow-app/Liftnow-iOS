@@ -10,6 +10,7 @@
 		26B3BE36866CEA7ACAD6B8AF /* Pods_LiftNow_LiftNowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9E7FDF3908F92C8559EC37 /* Pods_LiftNow_LiftNowUITests.framework */; };
 		811CB49C9FA668F46F8AB910 /* Pods_LiftNowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1945EE1753AA7CABD5A650 /* Pods_LiftNowTests.framework */; };
 		90A33D8A1FC4CA8C98E6858A /* Pods_LiftNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605745A0C20A9F562A3FFC8B /* Pods_LiftNow.framework */; };
+		C10C18BB2879B47700945927 /* rain_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C10C18BA2879B47000945927 /* rain_waves.mp4 */; };
 		C11CC0B1284356FB00E51C1E /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11CC0B0284356FB00E51C1E /* CustomPageControl.swift */; };
 		C138A0262858CFD400A4B01F /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C138A0242858CFD400A4B01F /* CoreDataModel.xcdatamodeld */; };
 		C138A0292858D04D00A4B01F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C138A0282858D04D00A4B01F /* CoreDataManager.swift */; };
@@ -66,7 +67,6 @@
 		C1B741E028596D6C00F19537 /* LogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B741DF28596D6C00F19537 /* LogsVC.swift */; };
 		C1B741E228596FD800F19537 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B741E128596FD800F19537 /* LogCell.xib */; };
 		C1B741E42859700400F19537 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B741E32859700400F19537 /* LogCell.swift */; };
-		C1F9AA1E287766200084EDAB /* rain_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C1F9AA1D287765FB0084EDAB /* rain_waves.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +92,7 @@
 		5583E92E244AAB8F6E394EB8 /* Pods-LiftNow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNow.release.xcconfig"; path = "Target Support Files/Pods-LiftNow/Pods-LiftNow.release.xcconfig"; sourceTree = "<group>"; };
 		605745A0C20A9F562A3FFC8B /* Pods_LiftNow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiftNow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9E7FDF3908F92C8559EC37 /* Pods_LiftNow_LiftNowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiftNow_LiftNowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C10C18BA2879B47000945927 /* rain_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain_waves.mp4; sourceTree = "<group>"; };
 		C11CC0B0284356FB00E51C1E /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		C138A0252858CFD400A4B01F /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		C138A0282858D04D00A4B01F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -153,7 +154,6 @@
 		C1B741DF28596D6C00F19537 /* LogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsVC.swift; sourceTree = "<group>"; };
 		C1B741E128596FD800F19537 /* LogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogCell.xib; sourceTree = "<group>"; };
 		C1B741E32859700400F19537 /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
-		C1F9AA1D287765FB0084EDAB /* rain_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain_waves.mp4; sourceTree = "<group>"; };
 		C8A8E104DFCA72AAB3CEB67F /* Pods-LiftNow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNow.debug.xcconfig"; path = "Target Support Files/Pods-LiftNow/Pods-LiftNow.debug.xcconfig"; sourceTree = "<group>"; };
 		E082373D9B10A5EC93533574 /* Pods-LiftNowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNowTests.debug.xcconfig"; path = "Target Support Files/Pods-LiftNowTests/Pods-LiftNowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBC595A18CE1AF7CF51F3C2E /* Pods-LiftNowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNowTests.release.xcconfig"; path = "Target Support Files/Pods-LiftNowTests/Pods-LiftNowTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -276,8 +276,8 @@
 		C1808FDA286EB2C800C07AAC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C10C18BA2879B47000945927 /* rain_waves.mp4 */,
 				C1A01EBA287751750011EF9B /* ocean_waves.mp4 */,
-				C1F9AA1D287765FB0084EDAB /* rain_waves.mp4 */,
 				C1808FDC286EB2E100C07AAC /* webp */,
 				C1808FDB286EB2D800C07AAC /* apng */,
 			);
@@ -526,7 +526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1F9AA1E287766200084EDAB /* rain_waves.mp4 in Resources */,
+				C10C18BB2879B47700945927 /* rain_waves.mp4 in Resources */,
 				C1A01EBB287751940011EF9B /* ocean_waves.mp4 in Resources */,
 				C1808FDE286EB30800C07AAC /* water_waves.png in Resources */,
 				C161306B28620CE200F8BD1C /* Calibri Bold Italic.ttf in Resources */,

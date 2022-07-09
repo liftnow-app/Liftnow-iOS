@@ -43,7 +43,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     var qaList = [QansModel]()
     
-    var qaDescArray: [String] = ["How are you feeling today?", "Is Something making you scared?", "What do you like to do after coming from school? ", "What is your weakness?", "What is your favorite food?"];
+    var qaDescArray: [String] = ["How are you feeling today?", "Is Something making you scared?", "What do you like to do after coming from school? ", "What is your weakness?", "What is your favorite food?"]
     
     var completedCount: Int = 0
     var nextQuesDelay: Int = 60 // 1 minute delay
@@ -68,11 +68,12 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         
         textField.autocapitalizationType = .sentences
         textField.delegate = self
+        textField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         self.setViewAni(view: self.bgView, hidden: true)
         bgView.backgroundColor = UIColor(patternImage: UIImage(named: "ansBG.png")!)
         
         playBackBG()
-        completedCount = 0;
+        completedCount = 0
         
         self.setViewAni(view: self.qaView, hidden: true)
         self.setViewAni(view: self.answerBtn, hidden: true)
@@ -90,12 +91,14 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        self.insertInDB()
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        ansLbl.text = "\(textField.text ?? "")\(string)"
-        return true
-    }
+    @objc func textFieldDidChange(textField : UITextField){
+      //  self.lblWordCount.text = "\(self.txtGroupName.text!.count)/"+"\(65)"
+        let tfStr = textField.text ?? ""
+        ansLbl.text = tfStr
+      }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -110,6 +113,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         qaList.append(qa)
         completedCount = completedCount+1
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // 2second delay to show APNG video
+            self.videoPlayerView.isHidden = true
             self.showAPNGbgPlayer()
             UIView.transition(with: self.ansLbl, duration: TimeInterval(2),
                               options: .transitionCrossDissolve,
@@ -181,10 +185,14 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     func showSuccess() {
         if (self.completedCount == qaDescArray.count) {
             self.setViewAni(view: qaView, hidden: true)
-            if (qaList.count > 0) {
-                CoreDataManager.shared.createRecord(qaList: qaList, homeModel: homeModel!)
-            }
+            self.insertInDB()
             //     showSuccessScreen()
+        }
+    }
+    
+    func insertInDB() {
+        if (qaList.count > 0) {
+            CoreDataManager.shared.createRecord(qaList: qaList, homeModel: homeModel!)
         }
     }
     
