@@ -112,15 +112,17 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         qa.answer = str ?? ""
         qaList.append(qa)
         completedCount = completedCount+1
+        
+        self.setViewAni(view: self.qaView, hidden: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // 2second delay to show APNG video
             self.videoPlayerView.isHidden = true
             self.showAPNGbgPlayer()
-            UIView.transition(with: self.ansLbl, duration: TimeInterval(2),
+            UIView.transition(with: self.ansLbl, duration: TimeInterval(5),
                               options: .transitionCrossDissolve,
                               animations: {
                 self.ansLbl.text = ""
             })
-            DispatchQueue.main.asyncAfter(deadline: .now() + 14) { // 14second delay to show the video
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) { // 10second delay to show the video
                 self.showVideoPlayer()
                 self.answerCompletion()
                 self.setPageQuestions(count: self.completedCount, delay: self.nextQuesDelay)
