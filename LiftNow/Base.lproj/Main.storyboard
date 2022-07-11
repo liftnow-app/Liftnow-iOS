@@ -525,11 +525,11 @@
             </objects>
             <point key="canvasLocation" x="3500" y="828"/>
         </scene>
-        <!--Video-->
+        <!--Home-->
         <scene sceneID="7Gp-YY-Zup">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4wR-cW-q8o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Video" image="videoIcon" id="2vn-Td-of0"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="videoIcon" selectedImage="videoSel-Icon" id="2vn-Td-of0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eDc-mY-v6P">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -751,7 +751,7 @@
                         <viewLayoutGuide key="safeArea" id="YHZ-gE-hLb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Art" image="artIcon" id="w8h-aX-ymZ"/>
+                    <tabBarItem key="tabBarItem" title="Art" image="artIcon" selectedImage="artSel-Icon" id="w8h-aX-ymZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqf-yw-96A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -763,14 +763,16 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="appNameLogo" width="182" height="52"/>
-        <image name="artIcon" width="24" height="24"/>
+        <image name="artIcon" width="28" height="28"/>
+        <image name="artSel-Icon" width="24" height="24"/>
         <image name="backBtn" width="24" height="24"/>
         <image name="logIcon" width="28" height="28"/>
         <image name="oceanBtnBg" width="214" height="55"/>
         <image name="ocean_name" width="210" height="45"/>
         <image name="playIcon" width="20" height="21"/>
         <image name="successBell" width="492" height="492"/>
-        <image name="videoIcon" width="27" height="23"/>
+        <image name="videoIcon" width="28" height="25"/>
+        <image name="videoSel-Icon" width="28" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

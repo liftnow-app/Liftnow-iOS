@@ -45,7 +45,7 @@
 		C178619B284E4D9D00F0517F /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C178619A284E4D9D00F0517F /* HomeCell.xib */; };
 		C1808FDE286EB30800C07AAC /* water_waves.png in Resources */ = {isa = PBXBuildFile; fileRef = C1808FDD286EB30800C07AAC /* water_waves.png */; };
 		C1808FE1286EB5CF00C07AAC /* BundleURLFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1808FE0286EB5CF00C07AAC /* BundleURLFetcher.swift */; };
-		C1A01EBB287751940011EF9B /* ocean_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C1A01EBA287751750011EF9B /* ocean_waves.mp4 */; };
+		C18126F5287C748600861201 /* ocean_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C18126F4287C747B00861201 /* ocean_waves.mp4 */; };
 		C1B1EC2C284F6C5700396AD6 /* OceanQaVC_oldBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC2B284F6C5700396AD6 /* OceanQaVC_oldBackup.swift */; };
 		C1B1EC2E284F897D00396AD6 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC2D284F897D00396AD6 /* UILabel+Extension.swift */; };
 		C1B1EC31284F8DA600396AD6 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC30284F8DA600396AD6 /* CustomTabBar.swift */; };
@@ -128,7 +128,7 @@
 		C1808FDD286EB30800C07AAC /* water_waves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_waves.png; sourceTree = "<group>"; };
 		C1808FDF286EB34800C07AAC /* webp_anim.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = webp_anim.webp; sourceTree = "<group>"; };
 		C1808FE0286EB5CF00C07AAC /* BundleURLFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleURLFetcher.swift; sourceTree = "<group>"; };
-		C1A01EBA287751750011EF9B /* ocean_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocean_waves.mp4; sourceTree = "<group>"; };
+		C18126F4287C747B00861201 /* ocean_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocean_waves.mp4; sourceTree = "<group>"; };
 		C1B1EC2B284F6C5700396AD6 /* OceanQaVC_oldBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanQaVC_oldBackup.swift; sourceTree = "<group>"; };
 		C1B1EC2D284F897D00396AD6 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		C1B1EC30284F8DA600396AD6 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				C10C18BA2879B47000945927 /* rain_waves.mp4 */,
-				C1A01EBA287751750011EF9B /* ocean_waves.mp4 */,
+				C18126F4287C747B00861201 /* ocean_waves.mp4 */,
 				C1808FDC286EB2E100C07AAC /* webp */,
 				C1808FDB286EB2D800C07AAC /* apng */,
 			);
@@ -526,8 +526,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18126F5287C748600861201 /* ocean_waves.mp4 in Resources */,
 				C10C18BB2879B47700945927 /* rain_waves.mp4 in Resources */,
-				C1A01EBB287751940011EF9B /* ocean_waves.mp4 in Resources */,
 				C1808FDE286EB30800C07AAC /* water_waves.png in Resources */,
 				C161306B28620CE200F8BD1C /* Calibri Bold Italic.ttf in Resources */,
 				C161306C28620CE200F8BD1C /* Calibri Bold.TTF in Resources */,

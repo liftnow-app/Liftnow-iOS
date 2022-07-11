@@ -43,10 +43,8 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     var qaList = [QansModel]()
     
-    var qaDescArray: [String] = ["How are you feeling today?", "Is Something making you scared?", "What do you like to do after coming from school? ", "What is your weakness?", "What is your favorite food?"]
-    
     var completedCount: Int = 0
-    var nextQuesDelay: Int = 60 // 1 minute delay
+    var nextQuesDelay: Int = 30 // 30 second delay
     var characterDelayQues: Float = 0.2 // 0.2 second
     var qaAnsLabelDelay: Float = 0.6 // 0.6 second
     
@@ -91,14 +89,16 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+//        player?.pause()
+        player?.replaceCurrentItem(with: nil)
         self.insertInDB()
     }
     
     @objc func textFieldDidChange(textField : UITextField){
-      //  self.lblWordCount.text = "\(self.txtGroupName.text!.count)/"+"\(65)"
+        //  self.lblWordCount.text = "\(self.txtGroupName.text!.count)/"+"\(65)"
         let tfStr = textField.text ?? ""
         ansLbl.text = tfStr
-      }
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -108,7 +108,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         ansLbl.text = str
         
         let qa = QansModel()
-        qa.question = qaDescArray[completedCount]
+        qa.question = homeModel?.qaList[completedCount] ?? ""
         qa.answer = str ?? ""
         qaList.append(qa)
         completedCount = completedCount+1
@@ -173,9 +173,9 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
             
             DispatchQueue.main.async {
                 self.ansLbl.text = ""
-                let isIndexValid = self.qaDescArray.indices.contains(count)
-                if (isIndexValid) {
-                    self.qaDesc.animateLabel(newText:  self.qaDescArray[count], characterDelay: TimeInterval(self.characterDelayQues)) { Bool in
+                let isIndexValid = self.homeModel?.qaList.indices.contains(count)
+                if (isIndexValid ?? false) {
+                    self.qaDesc.animateLabel(newText:  self.homeModel?.qaList[count] ?? "", characterDelay: TimeInterval(self.characterDelayQues)) { Bool in
                         self.showAnsNowBtn()
                     }
                 }
@@ -185,7 +185,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     }
     
     func showSuccess() {
-        if (self.completedCount == qaDescArray.count) {
+        if (self.completedCount == homeModel?.qaList.count) {
             self.setViewAni(view: qaView, hidden: true)
             self.insertInDB()
             //     showSuccessScreen()
@@ -228,8 +228,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         
         player = AVPlayer(playerItem: item)
         //   let player = AVPlayer(url: fileURL)
-        player?.isMuted = true
-        player?.volume = 0.0
+        player?.isMuted = false
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = view.bounds
         playerLayer.contentsGravity = .resizeAspect

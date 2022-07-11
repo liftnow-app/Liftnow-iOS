@@ -15,6 +15,7 @@ class HomeModel {
     var title: String? = ""
     var image: String? = ""
     var videoName: String? = ""
+    var qaList: [String] = []
     var enumType: TypeEnum? = TypeEnum.ocean
 }
 
@@ -44,16 +45,18 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         let h1 = HomeModel()
-        h1.title = "A very calm sea under the gentle rays of the sun."
+        h1.title = "Don’t worry under the gentle rays of the sun."
         h1.image = "Ocean"
         h1.enumType =  TypeEnum.ocean
         h1.videoName = "ocean_waves"
+        h1.qaList = ["What’s troubling you today?"]
         
         let h2 = HomeModel()
-        h2.title = "The rain brings a richness to each hue and the browns"
+        h2.title = "Be Happy a richness to each hue and the browns"
         h2.image = "Rain"
         h2.enumType =  TypeEnum.rain
         h2.videoName = "rain_waves"
+        h2.qaList = ["What are you grateful for today?"]
         
         array.append(h1)
         array.append(h2)
@@ -120,7 +123,7 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let index = sender.tag
         selectedHome = array[index]
         performSegue(withIdentifier: "OceanQaVC", sender: self)
- //       orientationChange()
+        //       orientationChange()
     }
     
     func orientationChange() {
@@ -152,13 +155,13 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
         player.isMuted = true
         player.play()
-//        let fetcher = BundleURLFetcher()
-//        DispatchQueue.main.async {
-//            let imageUrl = fetcher.fetchURL(for: FileFormat.apng)
-//            cell.ivAnimate.sd_setImage(with: imageUrl)
-//            cell.ivAnimate.contentMode = .scaleAspectFill
-//            cell.innerView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
-//        }
+        //        let fetcher = BundleURLFetcher()
+        //        DispatchQueue.main.async {
+        //            let imageUrl = fetcher.fetchURL(for: FileFormat.apng)
+        //            cell.ivAnimate.sd_setImage(with: imageUrl)
+        //            cell.ivAnimate.contentMode = .scaleAspectFill
+        //            cell.innerView.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.5176470588, blue: 0.368627451, alpha: 1)
+        //        }
     }
     
     @objc func itemDidFinishPlaying(sender: Notification) {
