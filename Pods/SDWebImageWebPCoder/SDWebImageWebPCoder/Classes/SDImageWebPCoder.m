@@ -100,14 +100,6 @@ static CGSize SDCalculateThumbnailSize(CGSize fullSize, BOOL preserveAspectRatio
     return CGSizeMake(resultWidth, resultHeight);
 }
 
-#ifndef SD_LOCK
-#define SD_LOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-#endif
-
-#ifndef SD_UNLOCK
-#define SD_UNLOCK(lock) dispatch_semaphore_signal(lock);
-#endif
-
 @interface SDWebPCoderFrame : NSObject
 
 @property (nonatomic, assign) NSUInteger index; // Frame index (zero based)
@@ -868,7 +860,7 @@ static CGSize SDCalculateThumbnailSize(CGSize fullSize, BOOL preserveAspectRatio
     }
     
     // Check if need to scale pixel size
-    if (maxPixelSize.width > 0 && maxPixelSize.height > 0 && width > maxPixelSize.width && height > maxPixelSize.height) {
+    if (maxPixelSize.width > 0 && maxPixelSize.height > 0 && (width > maxPixelSize.width || height > maxPixelSize.height)) {
         CGSize scaledSize = SDCalculateThumbnailSize(CGSizeMake(width, height), YES, maxPixelSize);
         result = WebPPictureRescale(&picture, scaledSize.width, scaledSize.height);
         if (!result) {

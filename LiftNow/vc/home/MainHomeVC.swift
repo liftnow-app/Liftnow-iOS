@@ -9,8 +9,6 @@ import UIKit
 import AVKit
 import AVFoundation
 
-import UIKit
-
 class HomeModel {
     var title: String? = ""
     var image: String? = ""
@@ -24,7 +22,7 @@ enum TypeEnum: NSInteger, Codable {
     case rain = 2
 }
 
-class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainHomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     
     // These strings will be the data for the table view cells
     let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
@@ -72,14 +70,6 @@ class MainHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.estimatedRowHeight = CGFloat(rowHeight)
         tableView.delegate = self
         tableView.dataSource = self
-        
-        //      self.navigationController?.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0);
-        
-        //        var lineView = UIView(frame: CGRect(x: 0, y: 0, width:(tabBarController?.tabBar.frame.size.width)!, height: 1))
-        //   lineView.backgroundColor = UIColor.grey
-        //   tabBarController.tabBar.addSubview(lineView)
-        
-        //    self.navigationController?.tabBarController?.tabBar.addSubview(lineView)
     }
     
     override func viewWillAppear(_ animated: Bool) {

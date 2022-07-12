@@ -74,7 +74,7 @@
                                             <constraint firstAttribute="height" constant="30" id="SS1-d6-Qo9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BillionDreams" family="Billion Dreams" pointSize="26"/>
-                                        <color key="textColor" red="0.74901960784313726" green="0.81960784313725488" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.45098039215686275" green="0.5725490196078431" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 May 2021, 06:30 pm" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xej-jW-wKq">

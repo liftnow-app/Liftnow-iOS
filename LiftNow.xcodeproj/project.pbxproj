@@ -46,12 +46,12 @@
 		C1808FDE286EB30800C07AAC /* water_waves.png in Resources */ = {isa = PBXBuildFile; fileRef = C1808FDD286EB30800C07AAC /* water_waves.png */; };
 		C1808FE1286EB5CF00C07AAC /* BundleURLFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1808FE0286EB5CF00C07AAC /* BundleURLFetcher.swift */; };
 		C18126F7287C7E5900861201 /* ocean_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C18126F6287C7E5000861201 /* ocean_waves.mp4 */; };
+		C194EB49287D85FB00BBEEC1 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194EB48287D85FB00BBEEC1 /* BaseVC.swift */; };
 		C1B1EC2C284F6C5700396AD6 /* OceanQaVC_oldBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC2B284F6C5700396AD6 /* OceanQaVC_oldBackup.swift */; };
 		C1B1EC2E284F897D00396AD6 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC2D284F897D00396AD6 /* UILabel+Extension.swift */; };
 		C1B1EC31284F8DA600396AD6 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC30284F8DA600396AD6 /* CustomTabBar.swift */; };
 		C1B328862842348100950321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B328852842348100950321 /* AppDelegate.swift */; };
 		C1B328882842348100950321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B328872842348100950321 /* SceneDelegate.swift */; };
-		C1B3288A2842348100950321 /* OceanMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B328892842348100950321 /* OceanMainVC.swift */; };
 		C1B3288D2842348100950321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B3288B2842348100950321 /* Main.storyboard */; };
 		C1B3288F2842348300950321 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B3288E2842348300950321 /* Assets.xcassets */; };
 		C1B328922842348300950321 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B328902842348300950321 /* LaunchScreen.storyboard */; };
@@ -129,13 +129,13 @@
 		C1808FDF286EB34800C07AAC /* webp_anim.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = webp_anim.webp; sourceTree = "<group>"; };
 		C1808FE0286EB5CF00C07AAC /* BundleURLFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleURLFetcher.swift; sourceTree = "<group>"; };
 		C18126F6287C7E5000861201 /* ocean_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocean_waves.mp4; sourceTree = "<group>"; };
+		C194EB48287D85FB00BBEEC1 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		C1B1EC2B284F6C5700396AD6 /* OceanQaVC_oldBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanQaVC_oldBackup.swift; sourceTree = "<group>"; };
 		C1B1EC2D284F897D00396AD6 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		C1B1EC30284F8DA600396AD6 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		C1B328822842348100950321 /* LiftNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiftNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1B328852842348100950321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1B328872842348100950321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C1B328892842348100950321 /* OceanMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanMainVC.swift; sourceTree = "<group>"; };
 		C1B3288C2842348100950321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1B3288E2842348300950321 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1B328912842348300950321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 				C1B741DE28596D3200F19537 /* log */,
 				C1786197284E4CB200F0517F /* home */,
 				C1B1EC2A284F6B5A00396AD6 /* detail */,
-				C1B328892842348100950321 /* OceanMainVC.swift */,
+				C194EB48287D85FB00BBEEC1 /* BaseVC.swift */,
 			);
 			path = vc;
 			sourceTree = "<group>";
@@ -687,7 +687,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1B3288A2842348100950321 /* OceanMainVC.swift in Sources */,
 				C1B328BB2842526900950321 /* CurvedUIView.swift in Sources */,
 				C1B1EC31284F8DA600396AD6 /* CustomTabBar.swift in Sources */,
 				C138A02B2858D68E00A4B01F /* Ranges.swift in Sources */,
@@ -707,6 +706,7 @@
 				C138A0292858D04D00A4B01F /* CoreDataManager.swift in Sources */,
 				C1B741E42859700400F19537 /* LogCell.swift in Sources */,
 				C138A0262858CFD400A4B01F /* CoreDataModel.xcdatamodeld in Sources */,
+				C194EB49287D85FB00BBEEC1 /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -590,7 +590,7 @@
                             <constraint firstItem="HpY-ra-3a3" firstAttribute="leading" secondItem="FWc-jf-jcZ" secondAttribute="leading" id="gts-pc-WzO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Reflection" image="logIcon" id="d38-KP-QRc"/>
+                    <tabBarItem key="tabBarItem" title="Reflection" image="logIcon" selectedImage="logSel-Icon" id="d38-KP-QRc"/>
                     <connections>
                         <outlet property="tableView" destination="Vf7-q1-KOj" id="6u3-oX-Ip0"/>
                     </connections>
@@ -767,6 +767,7 @@
         <image name="artSel-Icon" width="24" height="24"/>
         <image name="backBtn" width="24" height="24"/>
         <image name="logIcon" width="28" height="28"/>
+        <image name="logSel-Icon" width="28" height="28"/>
         <image name="oceanBtnBg" width="214" height="55"/>
         <image name="ocean_name" width="210" height="45"/>
         <image name="playIcon" width="20" height="21"/>
