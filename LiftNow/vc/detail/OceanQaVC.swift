@@ -62,6 +62,15 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(appDidEnterBackground),
+                                               name: UIApplication.didEnterBackgroundNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(appWillEnterForeground),
+                                               name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         setScrollView()
         
         textField.autocapitalizationType = .sentences
@@ -89,7 +98,7 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-//        player?.pause()
+        //        player?.pause()
         player?.replaceCurrentItem(with: nil)
         self.insertInDB()
     }
@@ -285,6 +294,13 @@ class OceanQaVC: UIViewController, UITextFieldDelegate, PopupViewControllerDeleg
         } else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
+    }
+    
+    @objc func appDidEnterBackground() {
+    }
+    
+    @objc func appWillEnterForeground() {
+        self.player?.play()
     }
 }
 

@@ -7,6 +7,7 @@ target 'LiftNow' do
 
   # Pods for LiftNow
   pod 'SDWebImageWebPCoder'
+  pod "UPCarouselFlowLayout"
 
   target 'LiftNowTests' do
     inherit! :search_paths

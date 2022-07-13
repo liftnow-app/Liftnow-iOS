@@ -47,6 +47,9 @@
 		C1808FE1286EB5CF00C07AAC /* BundleURLFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1808FE0286EB5CF00C07AAC /* BundleURLFetcher.swift */; };
 		C18126F7287C7E5900861201 /* ocean_waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C18126F6287C7E5000861201 /* ocean_waves.mp4 */; };
 		C194EB49287D85FB00BBEEC1 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194EB48287D85FB00BBEEC1 /* BaseVC.swift */; };
+		C194EB4C287DB54900BBEEC1 /* ArtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194EB4B287DB54900BBEEC1 /* ArtVC.swift */; };
+		C194EB54287DC41800BBEEC1 /* SJCenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194EB53287DC41800BBEEC1 /* SJCenterFlowLayout.swift */; };
+		C194EB56287DC51E00BBEEC1 /* CategoryColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194EB55287DC51E00BBEEC1 /* CategoryColCell.swift */; };
 		C1B1EC2C284F6C5700396AD6 /* OceanQaVC_oldBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC2B284F6C5700396AD6 /* OceanQaVC_oldBackup.swift */; };
 		C1B1EC2E284F897D00396AD6 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC2D284F897D00396AD6 /* UILabel+Extension.swift */; };
 		C1B1EC31284F8DA600396AD6 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B1EC30284F8DA600396AD6 /* CustomTabBar.swift */; };
@@ -67,6 +70,7 @@
 		C1B741E028596D6C00F19537 /* LogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B741DF28596D6C00F19537 /* LogsVC.swift */; };
 		C1B741E228596FD800F19537 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B741E128596FD800F19537 /* LogCell.xib */; };
 		C1B741E42859700400F19537 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B741E32859700400F19537 /* LogCell.swift */; };
+		C1D9FDB1287E9F6600E604C8 /* CategoryColCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1D9FDB0287E9F6600E604C8 /* CategoryColCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +134,9 @@
 		C1808FE0286EB5CF00C07AAC /* BundleURLFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleURLFetcher.swift; sourceTree = "<group>"; };
 		C18126F6287C7E5000861201 /* ocean_waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocean_waves.mp4; sourceTree = "<group>"; };
 		C194EB48287D85FB00BBEEC1 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		C194EB4B287DB54900BBEEC1 /* ArtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtVC.swift; sourceTree = "<group>"; };
+		C194EB53287DC41800BBEEC1 /* SJCenterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJCenterFlowLayout.swift; sourceTree = "<group>"; };
+		C194EB55287DC51E00BBEEC1 /* CategoryColCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryColCell.swift; sourceTree = "<group>"; };
 		C1B1EC2B284F6C5700396AD6 /* OceanQaVC_oldBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanQaVC_oldBackup.swift; sourceTree = "<group>"; };
 		C1B1EC2D284F897D00396AD6 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		C1B1EC30284F8DA600396AD6 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -154,6 +161,7 @@
 		C1B741DF28596D6C00F19537 /* LogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsVC.swift; sourceTree = "<group>"; };
 		C1B741E128596FD800F19537 /* LogCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogCell.xib; sourceTree = "<group>"; };
 		C1B741E32859700400F19537 /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		C1D9FDB0287E9F6600E604C8 /* CategoryColCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryColCell.xib; sourceTree = "<group>"; };
 		C8A8E104DFCA72AAB3CEB67F /* Pods-LiftNow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNow.debug.xcconfig"; path = "Target Support Files/Pods-LiftNow/Pods-LiftNow.debug.xcconfig"; sourceTree = "<group>"; };
 		E082373D9B10A5EC93533574 /* Pods-LiftNowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNowTests.debug.xcconfig"; path = "Target Support Files/Pods-LiftNowTests/Pods-LiftNowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBC595A18CE1AF7CF51F3C2E /* Pods-LiftNowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiftNowTests.release.xcconfig"; path = "Target Support Files/Pods-LiftNowTests/Pods-LiftNowTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +263,7 @@
 		C1786196284E4C8100F0517F /* vc */ = {
 			isa = PBXGroup;
 			children = (
+				C194EB4A287DB53800BBEEC1 /* art */,
 				C1B741DE28596D3200F19537 /* log */,
 				C1786197284E4CB200F0517F /* home */,
 				C1B1EC2A284F6B5A00396AD6 /* detail */,
@@ -298,6 +307,17 @@
 				C1808FDF286EB34800C07AAC /* webp_anim.webp */,
 			);
 			path = webp;
+			sourceTree = "<group>";
+		};
+		C194EB4A287DB53800BBEEC1 /* art */ = {
+			isa = PBXGroup;
+			children = (
+				C1D9FDB0287E9F6600E604C8 /* CategoryColCell.xib */,
+				C194EB55287DC51E00BBEEC1 /* CategoryColCell.swift */,
+				C194EB53287DC41800BBEEC1 /* SJCenterFlowLayout.swift */,
+				C194EB4B287DB54900BBEEC1 /* ArtVC.swift */,
+			);
+			path = art;
 			sourceTree = "<group>";
 		};
 		C1B1EC2A284F6B5A00396AD6 /* detail */ = {
@@ -537,6 +557,7 @@
 				C161305428620C9B00F8BD1C /* NotoSans-Black.ttf in Resources */,
 				C161305528620C9B00F8BD1C /* NotoSans-BlackItalic.ttf in Resources */,
 				C161305628620C9B00F8BD1C /* NotoSans-Bold.ttf in Resources */,
+				C1D9FDB1287E9F6600E604C8 /* CategoryColCell.xib in Resources */,
 				C161305728620C9B00F8BD1C /* NotoSans-BoldItalic.ttf in Resources */,
 				C161305828620C9B00F8BD1C /* NotoSans-ExtraBold.ttf in Resources */,
 				C161305928620C9B00F8BD1C /* NotoSans-ExtraBoldItalic.ttf in Resources */,
@@ -691,6 +712,7 @@
 				C1B1EC31284F8DA600396AD6 /* CustomTabBar.swift in Sources */,
 				C138A02B2858D68E00A4B01F /* Ranges.swift in Sources */,
 				C1B328BE284263AA00950321 /* CustomAlertVC.swift in Sources */,
+				C194EB4C287DB54900BBEEC1 /* ArtVC.swift in Sources */,
 				C1B1EC2C284F6C5700396AD6 /* OceanQaVC_oldBackup.swift in Sources */,
 				C1B328C8284273AC00950321 /* NavigationBar.swift in Sources */,
 				C1B328862842348100950321 /* AppDelegate.swift in Sources */,
@@ -699,6 +721,7 @@
 				C1B328B82842483500950321 /* OceanQaVC.swift in Sources */,
 				C1808FE1286EB5CF00C07AAC /* BundleURLFetcher.swift in Sources */,
 				C1B741E028596D6C00F19537 /* LogsVC.swift in Sources */,
+				C194EB54287DC41800BBEEC1 /* SJCenterFlowLayout.swift in Sources */,
 				C1B328C2284267F900950321 /* PopupViewController.swift in Sources */,
 				C1786199284E4CC100F0517F /* HomeCell.swift in Sources */,
 				C1B1EC2E284F897D00396AD6 /* UILabel+Extension.swift in Sources */,
@@ -706,6 +729,7 @@
 				C138A0292858D04D00A4B01F /* CoreDataManager.swift in Sources */,
 				C1B741E42859700400F19537 /* LogCell.swift in Sources */,
 				C138A0262858CFD400A4B01F /* CoreDataModel.xcdatamodeld in Sources */,
+				C194EB56287DC51E00BBEEC1 /* CategoryColCell.swift in Sources */,
 				C194EB49287D85FB00BBEEC1 /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -884,7 +908,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7KTL2H9UB8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftNow/Info.plist;
@@ -916,7 +940,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7KTL2H9UB8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftNow/Info.plist;

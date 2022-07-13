@@ -744,18 +744,65 @@
         <!--Art-->
         <scene sceneID="dAd-Kr-OUS">
             <objects>
-                <viewController id="LrY-TS-9wC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uuh-ZX-eFv">
+                <viewController id="LrY-TS-9wC" customClass="ArtVC" customModule="LiftNow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ec5-XO-yZS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="YHZ-gE-hLb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOv-lh-j92" userLabel="Header">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldg-jT-4r2">
+                                        <rect key="frame" x="186" y="6" width="42.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="28"/>
+                                        <color key="textColor" red="0.0" green="0.14117647059999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OZU-yb-uFs"/>
+                                    <constraint firstItem="Ldg-jT-4r2" firstAttribute="centerY" secondItem="JOv-lh-j92" secondAttribute="centerY" id="ax2-hH-Vd4"/>
+                                    <constraint firstItem="Ldg-jT-4r2" firstAttribute="centerX" secondItem="JOv-lh-j92" secondAttribute="centerX" id="nJw-WQ-xfM"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yYD-2U-mMM">
+                                <rect key="frame" x="0.0" y="94" width="414" height="719"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vVi-RC-U2S" customClass="SJCenterFlowLayout" customModule="LiftNow" customModuleProvider="target">
+                                    <size key="itemSize" width="375" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LrY-TS-9wC" id="tQU-9F-skX"/>
+                                    <outlet property="delegate" destination="LrY-TS-9wC" id="v4y-8t-g9S"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qc0-5s-AmL"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.98431372549019602" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JOv-lh-j92" firstAttribute="leading" secondItem="ec5-XO-yZS" secondAttribute="leading" id="1Cd-Jh-TRb"/>
+                            <constraint firstItem="Qc0-5s-AmL" firstAttribute="bottom" secondItem="yYD-2U-mMM" secondAttribute="bottom" id="7UZ-oP-bPh"/>
+                            <constraint firstItem="yYD-2U-mMM" firstAttribute="leading" secondItem="ec5-XO-yZS" secondAttribute="leading" id="MNv-Rv-Jw7"/>
+                            <constraint firstAttribute="trailing" secondItem="JOv-lh-j92" secondAttribute="trailing" id="MWQ-eu-tbc"/>
+                            <constraint firstAttribute="trailing" secondItem="yYD-2U-mMM" secondAttribute="trailing" id="cpe-dj-cpW"/>
+                            <constraint firstItem="yYD-2U-mMM" firstAttribute="top" secondItem="JOv-lh-j92" secondAttribute="bottom" id="sGU-S0-c0U"/>
+                            <constraint firstItem="JOv-lh-j92" firstAttribute="top" secondItem="Qc0-5s-AmL" secondAttribute="top" id="tpk-9J-rSN"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Art" image="artIcon" selectedImage="artSel-Icon" id="w8h-aX-ymZ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="yYD-2U-mMM" id="yEL-4r-iVl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqf-yw-96A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3257" y="1519"/>
+            <point key="canvasLocation" x="3256.521739130435" y="1518.75"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

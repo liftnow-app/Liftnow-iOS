@@ -39,18 +39,22 @@ class MainHomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     
+    var aVPlayerList = [AVPlayer]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(appWillEnterForeground),
+                                               name: UIApplication.willEnterForegroundNotification, object: nil)
         let h1 = HomeModel()
-        h1.title = "Don’t worry under the gentle rays of the sun."
+        h1.title = "Don’t worry"
         h1.image = "Ocean"
         h1.enumType =  TypeEnum.ocean
         h1.videoName = "ocean_waves"
         h1.qaList = ["What’s troubling you today?"]
         
         let h2 = HomeModel()
-        h2.title = "Be Happy a richness to each hue and the browns"
+        h2.title = "Be Happy"
         h2.image = "Rain"
         h2.enumType =  TypeEnum.rain
         h2.videoName = "rain_waves"
@@ -76,6 +80,7 @@ class MainHomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         super.viewWillAppear(animated)
         // Hide the navigation bar on the this view controller
         self.navigationController?.isNavigationBarHidden = true
+        appWillEnterForeground()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -127,11 +132,9 @@ class MainHomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         let filepath: String? = Bundle.main.path(forResource: videoName, ofType: "mp4")
         let fileURL = URL.init(fileURLWithPath: filepath!)
         let item = AVPlayerItem(url: fileURL)
-        
-        
         //    item.seek(to: CMTime.zero)
         let player = AVPlayer(playerItem: item)
-        
+        aVPlayerList.append(player)
         NotificationCenter.default.addObserver(self, selector: #selector(self.itemDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
         
         //  let player = AVPlayer(url: fileURL)
@@ -160,6 +163,12 @@ class MainHomeVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
         //        obj?.seek(to: CMTime.zero, completionHandler: { Bool in
         //            print("completionHandler")
         //        })
+    }
+    
+    @objc func appWillEnterForeground() {
+        aVPlayerList.forEach { player in
+            player.play()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
