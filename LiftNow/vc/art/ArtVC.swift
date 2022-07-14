@@ -60,7 +60,7 @@ extension ArtVC {
 // MARK: - UICollectionView DataSource & Delegate
 extension ArtVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 16
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

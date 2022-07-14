@@ -577,21 +577,43 @@
                                     <outlet property="delegate" destination="808-nX-fcI" id="dBn-GB-3Co"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPo-uz-yRM" userLabel="emptyView">
+                                <rect key="frame" x="30" y="348" width="354" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No reflections yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnn-wV-IHo">
+                                        <rect key="frame" x="0.0" y="81" width="354" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="28"/>
+                                        <color key="textColor" red="0.0" green="0.14117647059999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Gnn-wV-IHo" firstAttribute="leading" secondItem="MPo-uz-yRM" secondAttribute="leading" id="Cw0-K7-3JW"/>
+                                    <constraint firstItem="Gnn-wV-IHo" firstAttribute="centerY" secondItem="MPo-uz-yRM" secondAttribute="centerY" id="Ef7-ch-qna"/>
+                                    <constraint firstAttribute="height" constant="200" id="rl8-3D-l6h"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gnn-wV-IHo" secondAttribute="trailing" id="yMt-4z-sVx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FWc-jf-jcZ"/>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.98431372549019602" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Vf7-q1-KOj" firstAttribute="top" secondItem="HpY-ra-3a3" secondAttribute="bottom" id="0ac-IO-9t2"/>
+                            <constraint firstItem="FWc-jf-jcZ" firstAttribute="trailing" secondItem="MPo-uz-yRM" secondAttribute="trailing" constant="30" id="7Qn-DD-xH5"/>
                             <constraint firstItem="FWc-jf-jcZ" firstAttribute="trailing" secondItem="Vf7-q1-KOj" secondAttribute="trailing" id="Bwq-HH-g0z"/>
                             <constraint firstAttribute="trailing" secondItem="HpY-ra-3a3" secondAttribute="trailing" id="S9R-ak-Org"/>
                             <constraint firstItem="Vf7-q1-KOj" firstAttribute="leading" secondItem="FWc-jf-jcZ" secondAttribute="leading" id="TTv-64-0MD"/>
+                            <constraint firstItem="MPo-uz-yRM" firstAttribute="leading" secondItem="FWc-jf-jcZ" secondAttribute="leading" constant="30" id="XeZ-mc-qZW"/>
                             <constraint firstItem="HpY-ra-3a3" firstAttribute="top" secondItem="FWc-jf-jcZ" secondAttribute="top" id="akP-ka-CMe"/>
                             <constraint firstItem="FWc-jf-jcZ" firstAttribute="bottom" secondItem="Vf7-q1-KOj" secondAttribute="bottom" id="eQO-Fc-29b"/>
                             <constraint firstItem="HpY-ra-3a3" firstAttribute="leading" secondItem="FWc-jf-jcZ" secondAttribute="leading" id="gts-pc-WzO"/>
+                            <constraint firstItem="MPo-uz-yRM" firstAttribute="centerY" secondItem="NFs-mM-zC4" secondAttribute="centerY" id="y8C-j3-9aX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reflection" image="logIcon" selectedImage="logSel-Icon" id="d38-KP-QRc"/>
                     <connections>
+                        <outlet property="emptyView" destination="MPo-uz-yRM" id="vdi-e2-eoG"/>
                         <outlet property="tableView" destination="Vf7-q1-KOj" id="6u3-oX-Ip0"/>
                     </connections>
                 </viewController>
@@ -810,8 +832,8 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="appNameLogo" width="182" height="52"/>
-        <image name="artIcon" width="28" height="28"/>
-        <image name="artSel-Icon" width="24" height="24"/>
+        <image name="artIcon" width="26" height="24"/>
+        <image name="artSel-Icon" width="26" height="24"/>
         <image name="backBtn" width="24" height="24"/>
         <image name="logIcon" width="28" height="28"/>
         <image name="logSel-Icon" width="28" height="28"/>

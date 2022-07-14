@@ -17,6 +17,7 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // Don't forget to enter this in IB also
     let cellReuseIdentifier = "logCell"
     
+    @IBOutlet var emptyView: UIView!
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -33,6 +34,10 @@ class LogsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         array = CoreDataManager.shared.fetchRecord()
+        //show and hide the empty view
+        emptyView.isHidden = !array.isEmpty
+        tableView.isHidden = array.isEmpty
+        
         tableView.reloadData()
     }
     
